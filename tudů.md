@@ -1,1 +1,2 @@
-Odkaz na google dokument:
+Odkaz na google dokument (co kdo udělal, co je třeba udělat):
+https://docs.google.com/spreadsheets/d/1RUZAvFpLMn41N0baLQw50ZhHXOdAY9DIrTi5_Tv5lFs/edit?fbclid=IwAR13ndNhJUrZzF3iRBJL5OycLquTKaqTIHqzowXEKa51DaRl2PJkxnLPr1c#gid=0

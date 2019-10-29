@@ -1,0 +1,12 @@
+
+
+@mixin radiant() {
+  background: rgb(90, 90, 90);
+  background: linear-gradient(45deg, rgba(90, 90, 90, 1) 0%, rgba(227, 227, 227, 1) 100%);
+}
+
+@mixin basicFont() {
+  font-family: ocr-a-std, monospace;
+  font-style: normal;
+  font-weight: 400;
+}

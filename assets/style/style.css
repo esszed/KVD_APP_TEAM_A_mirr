@@ -118,6 +118,7 @@ body #signForm button {
   outline: none;
   border: none;
   color: white;
+  cursor: pointer;
   -webkit-transition: ease-in 0.3s;
   transition: ease-in 0.3s;
 }

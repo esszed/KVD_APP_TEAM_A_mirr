@@ -57,6 +57,9 @@
         flex-direction: column;
         align-self: center;
         padding: 5px;
+        #titel {
+          color: $myRed;
+        }
       }
     }
   }
@@ -103,7 +106,62 @@
     }
   }
 
-  table {
+  #tableCatag {
     grid-area: table;
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+      background-color: $primaryBtns;
+      display: table;
+      width: calc(100% - 1em);
+      table-layout: fixed;
+      td,
+      th {
+        border: 1px solid white;
+        padding: 8px;
+        color: white;
+      }
+    }
+    tbody {
+      background-color: white;
+      display: block;
+      max-height: 60vh;
+      overflow: auto;
+      overflow-y: scroll;
+      tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+      }
+      td,
+      th {
+        .yellow {
+          padding: 5px;
+          margin-right: 10px;
+          background-color: #d6af43;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          transition: ease-in 0.3s;
+          @include hoFoTableBtns();
+        }
+        .blue {
+          padding: 5px;
+          background-color: #428be0;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          transition: ease-in 0.3s;
+          @include hoFoTableBtns();
+        }
+        border: 1px solid rgb(51, 51, 51);
+        padding: 8px;
+        color: $myRed;
+      }
+    }
   }
 }

@@ -2,6 +2,17 @@ $formBackground: rgba(90, 90, 90, 0.24);
 $myRed: #ed1c24;
 $primaryBtns: rgba(51, 51, 51, 0.8);
 
+@mixin hoFoTableBtns() {
+  &:hover {
+    box-shadow: 3px 3px 3px grey;
+    transform: translateY(2px);
+  }
+  &:focus {
+    background-color: $primaryBtns;
+    color: white;
+  }
+}
+
 @mixin inputs($fontSize) {
   input {
     text-align: center;

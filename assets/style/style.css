@@ -241,6 +241,10 @@ body .containerLogin #zcu_logo {
   padding: 5px;
 }
 
+.containerCatalog nav #idCard #text #titel {
+  color: #ed1c24;
+}
+
 .containerCatalog a {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -367,10 +371,102 @@ body .containerLogin #zcu_logo {
   color: #ed1c24;
 }
 
-.containerCatalog table {
+.containerCatalog #tableCatag {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.containerCatalog #tableCatag thead {
+  background-color: rgba(51, 51, 51, 0.8);
+  display: table;
+  width: calc(100% - 1em);
+  table-layout: fixed;
+}
+
+.containerCatalog #tableCatag thead td,
+.containerCatalog #tableCatag thead th {
+  border: 1px solid white;
+  padding: 8px;
+  color: white;
+}
+
+.containerCatalog #tableCatag tbody {
+  background-color: white;
+  display: block;
+  max-height: 60vh;
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+.containerCatalog #tableCatag tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.containerCatalog #tableCatag tbody td,
+.containerCatalog #tableCatag tbody th {
+  border: 1px solid #333333;
+  padding: 8px;
+  color: #ed1c24;
+}
+
+.containerCatalog #tableCatag tbody td .yellow,
+.containerCatalog #tableCatag tbody th .yellow {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #d6af43;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
+.containerCatalog #tableCatag tbody td .yellow:hover,
+.containerCatalog #tableCatag tbody th .yellow:hover {
+  -webkit-box-shadow: 3px 3px 3px grey;
+          box-shadow: 3px 3px 3px grey;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.containerCatalog #tableCatag tbody td .yellow:focus,
+.containerCatalog #tableCatag tbody th .yellow:focus {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+}
+
+.containerCatalog #tableCatag tbody td .blue,
+.containerCatalog #tableCatag tbody th .blue {
+  padding: 5px;
+  background-color: #428be0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
+.containerCatalog #tableCatag tbody td .blue:hover,
+.containerCatalog #tableCatag tbody th .blue:hover {
+  -webkit-box-shadow: 3px 3px 3px grey;
+          box-shadow: 3px 3px 3px grey;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.containerCatalog #tableCatag tbody td .blue:focus,
+.containerCatalog #tableCatag tbody th .blue:focus {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
 }
 
 * {

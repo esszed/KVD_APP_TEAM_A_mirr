@@ -1,5 +1,7 @@
 @import "./variables";
 @import "./login";
+@import "./catalog";
+
 
 * {
   @include basicFont();

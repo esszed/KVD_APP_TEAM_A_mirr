@@ -4,12 +4,18 @@ $primaryBtns: rgba(51, 51, 51, 0.8);
 
 @font-face {
   font-family: myBasicFont;
-  src: url(../fonts/OCR\ A\ Std\ Regular.ttf);
+  src: url(../fonts/OCRAStdRegular.eot);
+  src: 
+  url(../fonts/OCRAStdRegular.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/OCRAStdRegular.ttf) format("ttf"), 
+  url(../fonts/OCRAStdRegular.woff) format("woff"),
+  url(../fonts/OCRAStdRegular.woff2) format("woff2"),
+  url(../fonts/OCRAStdRegular.svg#svgFontName) format("svg");
 }
 
 @mixin hoFoTableBtns($bgColor) {
   padding: 5px;
-  margin-right: 6px;
+  margin: 5px 10px 5px 0;
   background-color: $bgColor;
   color: white;
   border: none;

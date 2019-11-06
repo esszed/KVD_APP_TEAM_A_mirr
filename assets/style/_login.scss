@@ -11,8 +11,8 @@ body {
       ". sign ."
       ". zcuLog .";
     #logo {
-      margin-top: 40px;
-      width: 50%;
+      margin-top: 25px;
+      width: 30%;
       grid-area: logo;
       justify-self: center;
     }
@@ -28,7 +28,7 @@ body {
       border: 1px solid white;
       border-radius: 10px;
       background-color: $formBackground;
-      @include inputs(20px);
+      @include inputs(18px);
       a {
         text-decoration: none;
         color: white;
@@ -36,7 +36,7 @@ body {
         @include transitionInputs();
       }
       button {
-        font-size: 17px;
+        font-size: 15px;
         margin-top: 30px;
         padding: 10px 20px;
         border-radius: 10px;

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: myBasicFont;
+  src: url(../fonts/OCRAStdRegular.eot);
+  src: url(../fonts/OCRAStdRegular.eot?#iefix) format("embedded-opentype"), url(../fonts/OCRAStdRegular.ttf) format("ttf"), url(../fonts/OCRAStdRegular.woff) format("woff"), url(../fonts/OCRAStdRegular.woff2) format("woff2"), url(../fonts/OCRAStdRegular.svg#svgFontName) format("svg");
+}
+
 body {
   height: 100vh;
   background: #5a5a5a;
@@ -16,8 +22,8 @@ body .containerLogin {
 }
 
 body .containerLogin #logo {
-  margin-top: 40px;
-  width: 50%;
+  margin-top: 25px;
+  width: 30%;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: logo;
@@ -53,7 +59,7 @@ body .containerLogin #signForm {
 body .containerLogin #signForm input {
   text-align: center;
   outline: none;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
@@ -110,7 +116,7 @@ body .containerLogin #signForm a:focus {
 }
 
 body .containerLogin #signForm button {
-  font-size: 17px;
+  font-size: 15px;
   margin-top: 30px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -191,7 +197,7 @@ body .containerLogin #zcu_logo {
 }
 
 .containerCatalog nav ul li a {
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   color: white;
   -webkit-transition: ease-in 0.3s;
@@ -241,6 +247,10 @@ body .containerLogin #zcu_logo {
   padding: 5px;
 }
 
+.containerCatalog nav #idCard #text p {
+  font-size: 13px;
+}
+
 .containerCatalog nav #idCard #text #titel {
   color: #ed1c24;
 }
@@ -282,7 +292,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #searchRow #searchForm input {
   text-align: center;
   outline: none;
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
@@ -323,7 +333,7 @@ body .containerLogin #zcu_logo {
 }
 
 .containerCatalog #searchRow #searchForm button {
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: rgba(51, 51, 51, 0.8);
@@ -349,7 +359,7 @@ body .containerLogin #zcu_logo {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: rgba(51, 51, 51, 0.8);
@@ -417,7 +427,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .yellow,
 .containerCatalog #tableCatag tbody th .yellow {
   padding: 5px;
-  margin-right: 6px;
+  margin: 5px 10px 5px 0;
   background-color: #d6af43;
   color: white;
   border: none;
@@ -445,7 +455,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .blue,
 .containerCatalog #tableCatag tbody th .blue {
   padding: 5px;
-  margin-right: 6px;
+  margin: 5px 10px 5px 0;
   background-color: #428be0;
   color: white;
   border: none;
@@ -473,7 +483,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .green,
 .containerCatalog #tableCatag tbody th .green {
   padding: 5px;
-  margin-right: 6px;
+  margin: 5px 10px 5px 0;
   background-color: #7fad48;
   color: white;
   border: none;
@@ -501,7 +511,7 @@ body .containerLogin #zcu_logo {
 }
 
 * {
-  font-family: ocr-a-std, monospace;
+  font-family: myBasicFont, monospace;
   font-style: normal;
   font-weight: 400;
   margin: 0;

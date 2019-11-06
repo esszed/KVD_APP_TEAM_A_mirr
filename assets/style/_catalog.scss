@@ -136,27 +136,15 @@
       td,
       th {
         .yellow {
-          padding: 5px;
-          margin-right: 10px;
-          background-color: #d6af43;
-          color: white;
-          border: none;
-          border-radius: 10px;
-          outline: none;
-          cursor: pointer;
-          transition: ease-in 0.3s;
-          @include hoFoTableBtns();
+          @include hoFoTableBtns(#d6af43);
         }
         .blue {
-          padding: 5px;
-          background-color: #428be0;
-          color: white;
-          border: none;
-          border-radius: 10px;
-          outline: none;
-          cursor: pointer;
-          transition: ease-in 0.3s;
-          @include hoFoTableBtns();
+          @include hoFoTableBtns(#428be0);
+        }
+        .green {
+          @include hoFoTableBtns(#7fad48);
+          padding: 5px 10px;
+          margin: 0;
         }
         border: 1px solid rgb(51, 51, 51);
         padding: 8px;

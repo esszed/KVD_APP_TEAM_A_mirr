@@ -417,7 +417,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .yellow,
 .containerCatalog #tableCatag tbody th .yellow {
   padding: 5px;
-  margin-right: 10px;
+  margin-right: 6px;
   background-color: #d6af43;
   color: white;
   border: none;
@@ -445,6 +445,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .blue,
 .containerCatalog #tableCatag tbody th .blue {
   padding: 5px;
+  margin-right: 6px;
   background-color: #428be0;
   color: white;
   border: none;
@@ -465,6 +466,36 @@ body .containerLogin #zcu_logo {
 
 .containerCatalog #tableCatag tbody td .blue:focus,
 .containerCatalog #tableCatag tbody th .blue:focus {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+}
+
+.containerCatalog #tableCatag tbody td .green,
+.containerCatalog #tableCatag tbody th .green {
+  padding: 5px;
+  margin-right: 6px;
+  background-color: #7fad48;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.containerCatalog #tableCatag tbody td .green:hover,
+.containerCatalog #tableCatag tbody th .green:hover {
+  -webkit-box-shadow: 3px 3px 3px grey;
+          box-shadow: 3px 3px 3px grey;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.containerCatalog #tableCatag tbody td .green:focus,
+.containerCatalog #tableCatag tbody th .green:focus {
   background-color: rgba(51, 51, 51, 0.8);
   color: white;
 }

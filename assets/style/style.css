@@ -1,9 +1,3 @@
-@font-face {
-  font-family: myBasicFont;
-  src: url(../fonts/OCRAStdRegular.eot);
-  src: url(../fonts/OCRAStdRegular.eot?#iefix) format("embedded-opentype"), url(../fonts/OCRAStdRegular.ttf) format("ttf"), url(../fonts/OCRAStdRegular.woff) format("woff"), url(../fonts/OCRAStdRegular.woff2) format("woff2"), url(../fonts/OCRAStdRegular.svg#svgFontName) format("svg");
-}
-
 body {
   height: 100vh;
   background: #5a5a5a;
@@ -427,7 +421,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .yellow,
 .containerCatalog #tableCatag tbody th .yellow {
   padding: 5px;
-  margin: 5px 10px 5px 0;
+  margin-right: 10px;
   background-color: #d6af43;
   color: white;
   border: none;
@@ -455,7 +449,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .blue,
 .containerCatalog #tableCatag tbody th .blue {
   padding: 5px;
-  margin: 5px 10px 5px 0;
+  margin-right: 10px;
   background-color: #428be0;
   color: white;
   border: none;
@@ -464,6 +458,7 @@ body .containerLogin #zcu_logo {
   cursor: pointer;
   -webkit-transition: ease-in 0.3s;
   transition: ease-in 0.3s;
+  margin-right: 0;
 }
 
 .containerCatalog #tableCatag tbody td .blue:hover,
@@ -483,7 +478,7 @@ body .containerLogin #zcu_logo {
 .containerCatalog #tableCatag tbody td .green,
 .containerCatalog #tableCatag tbody th .green {
   padding: 5px;
-  margin: 5px 10px 5px 0;
+  margin-right: 10px;
   background-color: #7fad48;
   color: white;
   border: none;
@@ -511,7 +506,7 @@ body .containerLogin #zcu_logo {
 }
 
 * {
-  font-family: myBasicFont, monospace;
+  font-family: 'Roboto Mono', monospace;
   font-style: normal;
   font-weight: 400;
   margin: 0;

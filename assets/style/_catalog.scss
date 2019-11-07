@@ -143,6 +143,7 @@
         }
         .blue {
           @include hoFoTableBtns(#428be0);
+          margin-right: 0;
         }
         .green {
           @include hoFoTableBtns(#7fad48);

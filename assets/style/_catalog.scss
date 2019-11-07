@@ -80,7 +80,7 @@
     grid-area: search;
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    margin: 10px;
     #searchForm {
       @include inputs(13px);
       button {

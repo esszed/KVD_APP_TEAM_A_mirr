@@ -280,7 +280,7 @@ body .containerLogin #zcu_logo {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 15px;
+  margin: 10px;
 }
 
 .containerCatalog #searchRow #searchForm input {

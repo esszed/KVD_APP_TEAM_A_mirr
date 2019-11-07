@@ -2,16 +2,6 @@ $formBackground: rgba(90, 90, 90, 0.24);
 $myRed: #ed1c24;
 $primaryBtns: rgba(51, 51, 51, 0.8);
 
-@font-face {
-  font-family: myBasicFont;
-  src: url(../fonts/OCRAStdRegular.eot);
-  src: 
-  url(../fonts/OCRAStdRegular.eot?#iefix) format('embedded-opentype'),
-  url(../fonts/OCRAStdRegular.ttf) format("ttf"), 
-  url(../fonts/OCRAStdRegular.woff) format("woff"),
-  url(../fonts/OCRAStdRegular.woff2) format("woff2"),
-  url(../fonts/OCRAStdRegular.svg#svgFontName) format("svg");
-}
 
 @mixin hoFoTableBtns($bgColor) {
   padding: 5px;
@@ -80,7 +70,7 @@ $primaryBtns: rgba(51, 51, 51, 0.8);
 }
 
 @mixin basicFont() {
-  font-family: myBasicFont, monospace;
+  font-family: 'Roboto Mono', monospace;
   font-style: normal;
   font-weight: 400;
 }

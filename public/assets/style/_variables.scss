@@ -1,0 +1,76 @@
+$formBackground: rgba(90, 90, 90, 0.24);
+$myRed: #ed1c24;
+$primaryBtns: rgba(51, 51, 51, 0.8);
+
+
+@mixin hoFoTableBtns($bgColor) {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: $bgColor;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+  &:hover {
+    box-shadow: 3px 3px 3px grey;
+    transform: translateY(2px);
+  }
+  &:focus {
+    background-color: $primaryBtns;
+    color: white;
+  }
+}
+
+@mixin inputs($fontSize) {
+  input {
+    text-align: center;
+    outline: none;
+    font-size: $fontSize;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    color: $myRed;
+    &:focus::placeholder {
+      color: transparent;
+    }
+    &::placeholder {
+      color: $myRed;
+    }
+  }
+}
+
+@mixin transitionInputs() {
+  transition: ease-in 0.3s;
+  &:hover {
+    color: $myRed;
+  }
+  &:focus {
+    color: $myRed;
+  }
+}
+
+@mixin transitionBtns() {
+  transition: ease-in 0.3s;
+  &:hover {
+    background-color: white;
+    color: $myRed;
+  }
+  &:focus {
+    background-color: white;
+    color: $myRed;
+  }
+}
+
+@mixin radiant() {
+  background: rgb(90, 90, 90);
+  background: linear-gradient(45deg, rgba(90, 90, 90, 1) 0%, rgba(227, 227, 227, 1) 100%);
+}
+
+@mixin basicFont() {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+}

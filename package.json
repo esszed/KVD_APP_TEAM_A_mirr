@@ -1,0 +1,17 @@
+{
+  "name": "kvd_app_team_a-master",
+  "version": "1.0.0",
+  "description": "Inventory application ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Štěpán Zoubek",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.8"
+  }
+}

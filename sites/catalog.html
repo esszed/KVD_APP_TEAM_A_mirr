@@ -42,6 +42,26 @@
             <button id="filterBtn">Filtr</button>
         </div>
 
+        <div class="filter_row">
+            <div id="inputs">
+                <div>
+                    <label for="a_z">Seřadit A-Z</label>
+                    <input type="radio" id="a_z" name="filters">
+                </div>
+
+                <div>
+                    <label for="dostupne">Podle dostupnosti</label>
+                    <input type="radio" id="dostupne" name="filters">
+                </div>
+
+                <div>
+                    <label for="kusy">Podle dostupných kusů</label>
+                    <input type="radio" id="kusy" name="filters">
+                </div>
+            </div>
+            <button id="submit">Použít</button>
+        </div>
+
         <table id="tableCatag">
             <thead>
                 <tr>
@@ -238,6 +258,8 @@
         </table>
     </div>
 
+
+    <script src="../assets/js/filtr.js"></script>
 </body>
 
 </html>

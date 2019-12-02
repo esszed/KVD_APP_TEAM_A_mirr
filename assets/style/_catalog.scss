@@ -1,12 +1,15 @@
 .containerCatalog {
+  @include radiant();
   display: grid;
+  height: 100%;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
   grid-row-gap: 10px;
   grid-template-areas:
     ". nav ."
     ". a ."
     ". search ."
+    ". filter ."
     ". table .";
 
   nav {
@@ -58,7 +61,7 @@
         flex-direction: column;
         align-self: center;
         padding: 5px;
-        p{
+        p {
           font-size: 13px;
         }
         #titel {
@@ -107,6 +110,36 @@
       color: white;
       cursor: pointer;
       @include transitionBtns();
+    }
+  }
+
+  .filter_row {
+    opacity: 0;
+    height: 0;
+    padding: 0px;
+    grid-area: filter;
+    color: white;
+    background-color: $formBackground;
+    border: 1px solid $primaryBtns;
+    border-radius: 10px;
+    transition: 0.5s ease-out;
+    #inputs {
+      display: flex;
+      justify-content: space-around;
+    }
+    button {
+      display: block;
+      margin: 10px auto 0 auto;
+      font-size: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: $primaryBtns;
+      outline: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      @include transitionBtns();
+      pointer-events: none;
     }
   }
 

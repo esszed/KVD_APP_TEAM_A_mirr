@@ -1,12 +1,12 @@
-body {
-  height: 100vh;
+main {
   background: #5a5a5a;
   background: linear-gradient(45deg, #5a5a5a 0%, #e3e3e3 100%);
 }
 
-body .containerLogin {
+main .containerLogin {
   display: -ms-grid;
   display: grid;
+  height: 100vh;
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
   -ms-grid-rows: (auto)[3];
@@ -15,7 +15,7 @@ body .containerLogin {
       grid-template-areas: ". logo ." ". sign ." ". zcuLog .";
 }
 
-body .containerLogin #logo {
+main .containerLogin #logo {
   margin-top: 25px;
   width: 30%;
   -ms-grid-row: 1;
@@ -25,7 +25,7 @@ body .containerLogin #logo {
       justify-self: center;
 }
 
-body .containerLogin #signForm {
+main .containerLogin #signForm {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: sign;
@@ -50,7 +50,7 @@ body .containerLogin #signForm {
   background-color: rgba(90, 90, 90, 0.24);
 }
 
-body .containerLogin #signForm input {
+main .containerLogin #signForm input {
   text-align: center;
   outline: none;
   font-size: 18px;
@@ -61,39 +61,39 @@ body .containerLogin #signForm input {
   color: #ed1c24;
 }
 
-body .containerLogin #signForm input:focus::-webkit-input-placeholder {
+main .containerLogin #signForm input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-body .containerLogin #signForm input:focus:-ms-input-placeholder {
+main .containerLogin #signForm input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-body .containerLogin #signForm input:focus::-ms-input-placeholder {
+main .containerLogin #signForm input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-body .containerLogin #signForm input:focus::placeholder {
+main .containerLogin #signForm input:focus::placeholder {
   color: transparent;
 }
 
-body .containerLogin #signForm input::-webkit-input-placeholder {
+main .containerLogin #signForm input::-webkit-input-placeholder {
   color: #ed1c24;
 }
 
-body .containerLogin #signForm input:-ms-input-placeholder {
+main .containerLogin #signForm input:-ms-input-placeholder {
   color: #ed1c24;
 }
 
-body .containerLogin #signForm input::-ms-input-placeholder {
+main .containerLogin #signForm input::-ms-input-placeholder {
   color: #ed1c24;
 }
 
-body .containerLogin #signForm input::placeholder {
+main .containerLogin #signForm input::placeholder {
   color: #ed1c24;
 }
 
-body .containerLogin #signForm a {
+main .containerLogin #signForm a {
   text-decoration: none;
   color: white;
   padding: 10px;
@@ -101,15 +101,15 @@ body .containerLogin #signForm a {
   transition: ease-in 0.3s;
 }
 
-body .containerLogin #signForm a:hover {
+main .containerLogin #signForm a:hover {
   color: #ed1c24;
 }
 
-body .containerLogin #signForm a:focus {
+main .containerLogin #signForm a:focus {
   color: #ed1c24;
 }
 
-body .containerLogin #signForm button {
+main .containerLogin #signForm button {
   font-size: 15px;
   margin-top: 30px;
   padding: 10px 20px;
@@ -123,17 +123,17 @@ body .containerLogin #signForm button {
   transition: ease-in 0.3s;
 }
 
-body .containerLogin #signForm button:hover {
+main .containerLogin #signForm button:hover {
   background-color: white;
   color: #ed1c24;
 }
 
-body .containerLogin #signForm button:focus {
+main .containerLogin #signForm button:focus {
   background-color: white;
   color: #ed1c24;
 }
 
-body .containerLogin #zcu_logo {
+main .containerLogin #zcu_logo {
   width: 20%;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
@@ -143,14 +143,17 @@ body .containerLogin #zcu_logo {
 }
 
 .containerCatalog {
+  background: #5a5a5a;
+  background: linear-gradient(45deg, #5a5a5a 0%, #e3e3e3 100%);
   display: -ms-grid;
   display: grid;
+  height: 100%;
   -ms-grid-columns: 10% 80% 10%;
       grid-template-columns: 10% 80% 10%;
-  -ms-grid-rows: (auto)[4];
-      grid-template-rows: repeat(4, auto);
+  -ms-grid-rows: (auto)[5];
+      grid-template-rows: repeat(5, auto);
   grid-row-gap: 10px;
-      grid-template-areas: ". nav ." ". a ." ". search ." ". table .";
+      grid-template-areas: ". nav ." ". a ." ". search ." ". filter ." ". table .";
 }
 
 .containerCatalog nav {
@@ -376,8 +379,57 @@ body .containerLogin #zcu_logo {
   color: #ed1c24;
 }
 
-.containerCatalog #tableCatag {
+.containerCatalog .filter_row {
+  opacity: 0;
+  height: 0;
+  padding: 0px;
   -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: filter;
+  color: white;
+  background-color: rgba(90, 90, 90, 0.24);
+  border: 1px solid rgba(51, 51, 51, 0.8);
+  border-radius: 10px;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+.containerCatalog .filter_row #inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.containerCatalog .filter_row button {
+  display: block;
+  margin: 10px auto 0 auto;
+  font-size: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(51, 51, 51, 0.8);
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+  pointer-events: none;
+}
+
+.containerCatalog .filter_row button:hover {
+  background-color: white;
+  color: #ed1c24;
+}
+
+.containerCatalog .filter_row button:focus {
+  background-color: white;
+  color: #ed1c24;
+}
+
+.containerCatalog #tableCatag {
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: table;
   width: 100%;

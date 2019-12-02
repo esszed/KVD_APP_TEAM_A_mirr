@@ -1,12 +1,13 @@
-main {
+#loginMain {
+  min-height: 100vh;
+  height: 100%;
   background: #5a5a5a;
   background: linear-gradient(45deg, #5a5a5a 0%, #e3e3e3 100%);
 }
 
-main .containerLogin {
+#loginMain .containerLogin {
   display: -ms-grid;
   display: grid;
-  height: 100vh;
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
   -ms-grid-rows: (auto)[3];
@@ -15,7 +16,7 @@ main .containerLogin {
       grid-template-areas: ". logo ." ". sign ." ". zcuLog .";
 }
 
-main .containerLogin #logo {
+#loginMain .containerLogin #logo {
   margin-top: 25px;
   width: 30%;
   -ms-grid-row: 1;
@@ -25,7 +26,7 @@ main .containerLogin #logo {
       justify-self: center;
 }
 
-main .containerLogin #signForm {
+#loginMain .containerLogin #signForm {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: sign;
@@ -50,7 +51,7 @@ main .containerLogin #signForm {
   background-color: rgba(90, 90, 90, 0.24);
 }
 
-main .containerLogin #signForm input {
+#loginMain .containerLogin #signForm input {
   text-align: center;
   outline: none;
   font-size: 18px;
@@ -61,39 +62,39 @@ main .containerLogin #signForm input {
   color: #ed1c24;
 }
 
-main .containerLogin #signForm input:focus::-webkit-input-placeholder {
+#loginMain .containerLogin #signForm input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-main .containerLogin #signForm input:focus:-ms-input-placeholder {
+#loginMain .containerLogin #signForm input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-main .containerLogin #signForm input:focus::-ms-input-placeholder {
+#loginMain .containerLogin #signForm input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-main .containerLogin #signForm input:focus::placeholder {
+#loginMain .containerLogin #signForm input:focus::placeholder {
   color: transparent;
 }
 
-main .containerLogin #signForm input::-webkit-input-placeholder {
+#loginMain .containerLogin #signForm input::-webkit-input-placeholder {
   color: #ed1c24;
 }
 
-main .containerLogin #signForm input:-ms-input-placeholder {
+#loginMain .containerLogin #signForm input:-ms-input-placeholder {
   color: #ed1c24;
 }
 
-main .containerLogin #signForm input::-ms-input-placeholder {
+#loginMain .containerLogin #signForm input::-ms-input-placeholder {
   color: #ed1c24;
 }
 
-main .containerLogin #signForm input::placeholder {
+#loginMain .containerLogin #signForm input::placeholder {
   color: #ed1c24;
 }
 
-main .containerLogin #signForm a {
+#loginMain .containerLogin #signForm a {
   text-decoration: none;
   color: white;
   padding: 10px;
@@ -101,15 +102,15 @@ main .containerLogin #signForm a {
   transition: ease-in 0.3s;
 }
 
-main .containerLogin #signForm a:hover {
+#loginMain .containerLogin #signForm a:hover {
   color: #ed1c24;
 }
 
-main .containerLogin #signForm a:focus {
+#loginMain .containerLogin #signForm a:focus {
   color: #ed1c24;
 }
 
-main .containerLogin #signForm button {
+#loginMain .containerLogin #signForm button {
   font-size: 15px;
   margin-top: 30px;
   padding: 10px 20px;
@@ -123,17 +124,17 @@ main .containerLogin #signForm button {
   transition: ease-in 0.3s;
 }
 
-main .containerLogin #signForm button:hover {
+#loginMain .containerLogin #signForm button:hover {
   background-color: white;
   color: #ed1c24;
 }
 
-main .containerLogin #signForm button:focus {
+#loginMain .containerLogin #signForm button:focus {
   background-color: white;
   color: #ed1c24;
 }
 
-main .containerLogin #zcu_logo {
+#loginMain .containerLogin #zcu_logo {
   width: 20%;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
@@ -142,12 +143,16 @@ main .containerLogin #zcu_logo {
       justify-self: end;
 }
 
-.containerCatalog {
+#catalogMain {
+  min-height: 100vh;
+  height: 100%;
   background: #5a5a5a;
   background: linear-gradient(45deg, #5a5a5a 0%, #e3e3e3 100%);
+}
+
+#catalogMain .containerCatalog {
   display: -ms-grid;
   display: grid;
-  height: 100%;
   -ms-grid-columns: 10% 80% 10%;
       grid-template-columns: 10% 80% 10%;
   -ms-grid-rows: (auto)[5];
@@ -156,7 +161,7 @@ main .containerLogin #zcu_logo {
       grid-template-areas: ". nav ." ". a ." ". search ." ". filter ." ". table .";
 }
 
-.containerCatalog nav {
+#catalogMain .containerCatalog nav {
   margin: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -169,13 +174,13 @@ main .containerLogin #zcu_logo {
   grid-area: nav;
 }
 
-.containerCatalog nav #logoSmall {
+#catalogMain .containerCatalog nav #logoSmall {
   width: 20%;
   height: 20%;
   min-width: 20%;
 }
 
-.containerCatalog nav ul {
+#catalogMain .containerCatalog nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,14 +192,14 @@ main .containerLogin #zcu_logo {
   margin-right: 50px;
 }
 
-.containerCatalog nav ul li {
+#catalogMain .containerCatalog nav ul li {
   padding: 0 10px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.containerCatalog nav ul li a {
+#catalogMain .containerCatalog nav ul li a {
   font-size: 16px;
   text-decoration: none;
   color: white;
@@ -202,15 +207,15 @@ main .containerLogin #zcu_logo {
   transition: ease-in 0.3s;
 }
 
-.containerCatalog nav ul li a:hover {
+#catalogMain .containerCatalog nav ul li a:hover {
   color: #ed1c24;
 }
 
-.containerCatalog nav ul li a:focus {
+#catalogMain .containerCatalog nav ul li a:focus {
   color: #ed1c24;
 }
 
-.containerCatalog nav #idCard {
+#catalogMain .containerCatalog nav #idCard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -224,7 +229,7 @@ main .containerLogin #zcu_logo {
           box-shadow: 5px 5px 6px grey;
 }
 
-.containerCatalog nav #idCard img {
+#catalogMain .containerCatalog nav #idCard img {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -232,7 +237,7 @@ main .containerLogin #zcu_logo {
   height: 50px;
 }
 
-.containerCatalog nav #idCard #text {
+#catalogMain .containerCatalog nav #idCard #text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,15 +250,15 @@ main .containerLogin #zcu_logo {
   padding: 5px;
 }
 
-.containerCatalog nav #idCard #text p {
+#catalogMain .containerCatalog nav #idCard #text p {
   font-size: 13px;
 }
 
-.containerCatalog nav #idCard #text #titel {
+#catalogMain .containerCatalog nav #idCard #text #titel {
   color: #ed1c24;
 }
 
-.containerCatalog a {
+#catalogMain .containerCatalog a {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: a;
@@ -266,15 +271,15 @@ main .containerLogin #zcu_logo {
   transition: ease-in 0.3s;
 }
 
-.containerCatalog a:hover {
+#catalogMain .containerCatalog a:hover {
   color: #ed1c24;
 }
 
-.containerCatalog a:focus {
+#catalogMain .containerCatalog a:focus {
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow {
+#catalogMain .containerCatalog #searchRow {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: search;
@@ -287,7 +292,7 @@ main .containerLogin #zcu_logo {
   margin: 10px;
 }
 
-.containerCatalog #searchRow #searchForm input {
+#catalogMain .containerCatalog #searchRow #searchForm input {
   text-align: center;
   outline: none;
   font-size: 13px;
@@ -298,39 +303,39 @@ main .containerLogin #zcu_logo {
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #searchForm input:focus::-webkit-input-placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-.containerCatalog #searchRow #searchForm input:focus:-ms-input-placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-.containerCatalog #searchRow #searchForm input:focus::-ms-input-placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-.containerCatalog #searchRow #searchForm input:focus::placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input:focus::placeholder {
   color: transparent;
 }
 
-.containerCatalog #searchRow #searchForm input::-webkit-input-placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input::-webkit-input-placeholder {
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #searchForm input:-ms-input-placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input:-ms-input-placeholder {
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #searchForm input::-ms-input-placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input::-ms-input-placeholder {
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #searchForm input::placeholder {
+#catalogMain .containerCatalog #searchRow #searchForm input::placeholder {
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #searchForm button {
+#catalogMain .containerCatalog #searchRow #searchForm button {
   font-size: 13px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -343,17 +348,17 @@ main .containerLogin #zcu_logo {
   transition: ease-in 0.3s;
 }
 
-.containerCatalog #searchRow #searchForm button:hover {
+#catalogMain .containerCatalog #searchRow #searchForm button:hover {
   background-color: white;
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #searchForm button:focus {
+#catalogMain .containerCatalog #searchRow #searchForm button:focus {
   background-color: white;
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #filterBtn {
+#catalogMain .containerCatalog #searchRow #filterBtn {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -369,17 +374,17 @@ main .containerLogin #zcu_logo {
   transition: ease-in 0.3s;
 }
 
-.containerCatalog #searchRow #filterBtn:hover {
+#catalogMain .containerCatalog #searchRow #filterBtn:hover {
   background-color: white;
   color: #ed1c24;
 }
 
-.containerCatalog #searchRow #filterBtn:focus {
+#catalogMain .containerCatalog #searchRow #filterBtn:focus {
   background-color: white;
   color: #ed1c24;
 }
 
-.containerCatalog .filter_row {
+#catalogMain .containerCatalog .filter_row {
   opacity: 0;
   height: 0;
   padding: 0px;
@@ -394,7 +399,7 @@ main .containerLogin #zcu_logo {
   transition: 0.5s ease-out;
 }
 
-.containerCatalog .filter_row #inputs {
+#catalogMain .containerCatalog .filter_row #inputs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -402,7 +407,7 @@ main .containerLogin #zcu_logo {
       justify-content: space-around;
 }
 
-.containerCatalog .filter_row button {
+#catalogMain .containerCatalog .filter_row button {
   display: block;
   margin: 10px auto 0 auto;
   font-size: 10px;
@@ -418,17 +423,17 @@ main .containerLogin #zcu_logo {
   pointer-events: none;
 }
 
-.containerCatalog .filter_row button:hover {
+#catalogMain .containerCatalog .filter_row button:hover {
   background-color: white;
   color: #ed1c24;
 }
 
-.containerCatalog .filter_row button:focus {
+#catalogMain .containerCatalog .filter_row button:focus {
   background-color: white;
   color: #ed1c24;
 }
 
-.containerCatalog #tableCatag {
+#catalogMain .containerCatalog #tableCatag {
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: table;
@@ -436,43 +441,44 @@ main .containerLogin #zcu_logo {
   border-collapse: collapse;
 }
 
-.containerCatalog #tableCatag thead {
+#catalogMain .containerCatalog #tableCatag thead {
   background-color: rgba(51, 51, 51, 0.8);
   display: table;
   width: calc(100% - 1em);
   table-layout: fixed;
 }
 
-.containerCatalog #tableCatag thead td,
-.containerCatalog #tableCatag thead th {
+#catalogMain .containerCatalog #tableCatag thead td,
+#catalogMain .containerCatalog #tableCatag thead th {
   border: 1px solid white;
   padding: 8px;
   color: white;
 }
 
-.containerCatalog #tableCatag tbody {
+#catalogMain .containerCatalog #tableCatag tbody {
   background-color: white;
   display: block;
-  max-height: 60vh;
+  height: 60vh;
+  min-height: 55vh;
   overflow: auto;
   overflow-y: scroll;
 }
 
-.containerCatalog #tableCatag tbody tr {
+#catalogMain .containerCatalog #tableCatag tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 
-.containerCatalog #tableCatag tbody td,
-.containerCatalog #tableCatag tbody th {
+#catalogMain .containerCatalog #tableCatag tbody td,
+#catalogMain .containerCatalog #tableCatag tbody th {
   border: 1px solid #333333;
   padding: 8px;
   color: #ed1c24;
 }
 
-.containerCatalog #tableCatag tbody td .yellow,
-.containerCatalog #tableCatag tbody th .yellow {
+#catalogMain .containerCatalog #tableCatag tbody td .yellow,
+#catalogMain .containerCatalog #tableCatag tbody th .yellow {
   padding: 5px;
   margin-right: 10px;
   background-color: #d6af43;
@@ -485,22 +491,22 @@ main .containerLogin #zcu_logo {
   transition: ease-in 0.3s;
 }
 
-.containerCatalog #tableCatag tbody td .yellow:hover,
-.containerCatalog #tableCatag tbody th .yellow:hover {
+#catalogMain .containerCatalog #tableCatag tbody td .yellow:hover,
+#catalogMain .containerCatalog #tableCatag tbody th .yellow:hover {
   -webkit-box-shadow: 3px 3px 3px grey;
           box-shadow: 3px 3px 3px grey;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.containerCatalog #tableCatag tbody td .yellow:focus,
-.containerCatalog #tableCatag tbody th .yellow:focus {
+#catalogMain .containerCatalog #tableCatag tbody td .yellow:focus,
+#catalogMain .containerCatalog #tableCatag tbody th .yellow:focus {
   background-color: rgba(51, 51, 51, 0.8);
   color: white;
 }
 
-.containerCatalog #tableCatag tbody td .blue,
-.containerCatalog #tableCatag tbody th .blue {
+#catalogMain .containerCatalog #tableCatag tbody td .blue,
+#catalogMain .containerCatalog #tableCatag tbody th .blue {
   padding: 5px;
   margin-right: 10px;
   background-color: #428be0;
@@ -514,22 +520,22 @@ main .containerLogin #zcu_logo {
   margin-right: 0;
 }
 
-.containerCatalog #tableCatag tbody td .blue:hover,
-.containerCatalog #tableCatag tbody th .blue:hover {
+#catalogMain .containerCatalog #tableCatag tbody td .blue:hover,
+#catalogMain .containerCatalog #tableCatag tbody th .blue:hover {
   -webkit-box-shadow: 3px 3px 3px grey;
           box-shadow: 3px 3px 3px grey;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.containerCatalog #tableCatag tbody td .blue:focus,
-.containerCatalog #tableCatag tbody th .blue:focus {
+#catalogMain .containerCatalog #tableCatag tbody td .blue:focus,
+#catalogMain .containerCatalog #tableCatag tbody th .blue:focus {
   background-color: rgba(51, 51, 51, 0.8);
   color: white;
 }
 
-.containerCatalog #tableCatag tbody td .green,
-.containerCatalog #tableCatag tbody th .green {
+#catalogMain .containerCatalog #tableCatag tbody td .green,
+#catalogMain .containerCatalog #tableCatag tbody th .green {
   padding: 5px;
   margin-right: 10px;
   background-color: #7fad48;
@@ -544,16 +550,16 @@ main .containerLogin #zcu_logo {
   margin: 0;
 }
 
-.containerCatalog #tableCatag tbody td .green:hover,
-.containerCatalog #tableCatag tbody th .green:hover {
+#catalogMain .containerCatalog #tableCatag tbody td .green:hover,
+#catalogMain .containerCatalog #tableCatag tbody th .green:hover {
   -webkit-box-shadow: 3px 3px 3px grey;
           box-shadow: 3px 3px 3px grey;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.containerCatalog #tableCatag tbody td .green:focus,
-.containerCatalog #tableCatag tbody th .green:focus {
+#catalogMain .containerCatalog #tableCatag tbody td .green:focus,
+#catalogMain .containerCatalog #tableCatag tbody th .green:focus {
   background-color: rgba(51, 51, 51, 0.8);
   color: white;
 }

@@ -1,8 +1,9 @@
-main {
+#loginMain {
+  min-height: 100vh;
+  height: 100%;
   @include radiant();
   .containerLogin {
     display: grid;
-    height: 100vh;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
     grid-row-gap: 10px;

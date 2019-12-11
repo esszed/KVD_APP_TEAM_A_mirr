@@ -6,31 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <title>KVD_APP Katalog</title>
 </head>
 
 <body>
     <main>
         <div class="containerCatalog">
-            <nav>
-                <img id="logoSmall" src="../assets/images/logo.png" alt="Logo">
-                <ul>
-                    <li><a href="#">Katalog</a></li>
-                    <li><a href="./myLibrary.html">Zapůjčené</a></li>
-                    <li><a href="#">Nastavení</a></li>
-                </ul>
+            {{>header}}
 
-                <div id="idCard">
-                    <img src="../assets/images/apa_head.png" alt="Obrázek profilu">
-                    <div id="text">
-                        <p id="name">Petr Vomáčka</p>
-                        <p id="titel">Správce</p>
-                    </div>
-                </div>
-            </nav>
-
-            <a href="../index.html">Odhlásit</a>
+            <a href="/">Odhlásit</a>
 
             <div id="searchRow">
                 <div id="searchForm">
@@ -237,7 +222,7 @@
         </div>
     </main>
 
-    <script src="../assets/js/filtr.js"></script>
+    <script src="./js/filtr.js"></script>
 </body>
 
 </html>

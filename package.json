@@ -20,6 +20,9 @@
   "homepage": "https://github.com/vomajda96/KVD_APP_TEAM_A#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "hbs": "^4.0.6"
+    "hbs": "^4.0.6",
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.0",
+    "validator": "^12.1.0"
   }
 }

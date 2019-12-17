@@ -23,6 +23,14 @@ app.get("", (req, res) => {
     }
 })
 
+app.get("/registrace", (req, res) => {
+    try {
+        res.status(201).render("registrace")
+    } catch (e) {
+        res.status(404).send("Nějakej fail, kámo!")
+    }
+})
+
 app.get("/katalog", (req, res) => {
     try {
         res.status(201).render("catalog")

@@ -1,0 +1,26 @@
+.containerSettings .tile {
+	padding: 5px;
+	min-height: 138px;
+}
+
+.containerSettings .tile a:hover {
+	text-decoration: none;
+	background: #ccc;
+}
+
+.containerSettings .tileContent:hover {
+	text-decoration: none;
+	background: #ccc;
+}
+
+.containerSettings .tileContent {
+	border-radius: 10px;
+	padding: 15px;
+	background: #fff;
+	box-shadow: 5px 5px 5px #444;
+	height: 100%;
+}
+
+.containerSetting .tileContent {
+	color: #343a40!important;
+}

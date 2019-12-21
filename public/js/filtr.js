@@ -1,6 +1,6 @@
 const toggleFilter = () => {
     const btn = document.querySelector("#filterBtn")
-    const submitBtn = document.querySelector("#submit")
+    const submitBtn = document.querySelector(".submitFilterBtn")
     const filterTab = document.querySelector(".filter_row")
 
     btn.addEventListener("click", () => {

@@ -1,16 +1,35 @@
-<nav>
-    <img id="logoSmall" src="./images/logo.png" alt="Logo">
-    <ul>
-        <li><a href="/katalog">Katalog</a></li>
-        <li><a href="/myLibrary">Zapůjčené</a></li>
-        <li><a href="/nastavení">Nastavení</a></li>
-    </ul>
+<div class="containerCatalog text-center">
+    <nav class="navbar navbar-expand-lg navbar-light navbarKVD">
+        <ul class="navbar-nav">
+            <img src="./images/logo.png" height="50" alt="JS#App">
+        </ul>
 
-    <div id="idCard">
-        <img src="./images/apa_head.png" alt="Obrázek profilu">
-        <div id="text">
-            <p id="name">Petr Vomáčka</p>
-            <p id="titel">Správce</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapseKVD"
+            aria-controls="navbarcollapseKVD" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarcollapseKVD">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/katalog" title="Katalog">Katalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/knihovna" title="Zapůjčené">Zapůjčené</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nastaveni" title="Nastavení">Nastavení</a>
+                </li>
+                <li class="nav-item">
+                    <div id="idCard">
+                        <img src="./images/apa_head.png" alt="Obrázek profilu">
+                        <span id="name">Petr Vomáčka</span> | <span id="titel">Správce</span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-dark ml-3" href="/" title="Odhlásit"><i class="fas fa-sign-out-alt"></i>
+                        Odhlásit</a>
+                </li>
+            </ul>
         </div>
-    </div>
-</nav>
+    </nav>

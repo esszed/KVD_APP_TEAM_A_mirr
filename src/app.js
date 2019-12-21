@@ -39,9 +39,17 @@ app.get("/katalog", (req, res) => {
     }
 })
 
-app.get("/myLibrary", (req, res) => {
+app.get("/knihovna", (req, res) => {
     try {
         res.status(201).render("MyLibrary")
+    } catch (e) {
+        res.status(404).send("Nějakej fail, kámo!")
+    }
+})
+
+app.get("/nastaveni", (req, res) => {
+    try {
+        res.status(201).render("settings")
     } catch (e) {
         res.status(404).send("Nějakej fail, kámo!")
     }

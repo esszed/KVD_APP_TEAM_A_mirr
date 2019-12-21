@@ -1,0 +1,80 @@
+.login {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logoContainer {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.login .logoContainer .logo {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.login .loginForm {
+	border: solid 1px #fff;
+	border-radius: 20px;
+	padding: 20px;
+	background: rgba(75, 75, 75, 0.3);
+}
+
+.login .loginForm form {
+	max-width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.login .loginForm .form-control {
+	margin-bottom: 10px;
+	color: red;
+}
+
+.login .loginForm .regLink {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.login .loginForm .regLink a {
+	color: #fff;
+}
+
+.login .loginForm a:hover {
+	text-decoration: none;
+	color: red;
+}
+
+.login .loginForm ::placeholder {
+	color: red;
+}
+
+.login .loginForm input {
+	color: red;
+	opacity: 1;
+	text-align: center;
+}
+
+.login .loginForm .radios {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.zcu_logo {
+	float: right;
+	max-width: 200px;
+}
+
+.zcu_logo img{
+	width: 100%;
+}
+
+@media (max-width: 500px) {
+	.zcu_logo {
+		max-width: 120px;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

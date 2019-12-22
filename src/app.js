@@ -18,6 +18,7 @@ app.set("view options", { layout: "../layouts/main" })
 hbs.registerPartials(partialsPath)
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(publicDirectoryPath))
 app.use(userRouter)
 

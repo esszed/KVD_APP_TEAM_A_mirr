@@ -1,10 +1,6 @@
 const express = require("express")
 const User = require("../models/user")
-const bodyParser = require("body-parser")
 const router = new express.Router()
-
-
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 router.get("/", (req, res) => {
@@ -23,12 +19,12 @@ router.get("/registrace", (req, res) => {
     }
 })
 
-router.post("/registrace", urlencodedParser, async (req, res) => {
+router.post("/registrace", async (req, res) => {
     const user = new User(req.body)
 
     try {
         await user.save()
-        res.status(201).send("User created")
+        res.status(201).render("index", { message: "Jste zaregistrován, přihlaste se!" })
     } catch (e) {
         console.log(user)
         res.status(400).send(e)

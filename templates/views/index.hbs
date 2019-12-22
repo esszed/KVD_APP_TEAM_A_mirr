@@ -1,50 +1,30 @@
-<!DOCTYPE html>
-<html lang="cs">
+<div class="container">
+    <div class="login">
+        <div class="logoContainer">
+            <img class="logo" src="./images/logo.png" alt="Logo_Robot">
+        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <div class="loginForm">
+            <form action="/katalog">
+                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Heslo">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet">
+                <p class="regLink">
+                    <a href="/registrace">Chci se registrovat</a>
+                </p>
 
-    <link rel="stylesheet" href="./style/bootstrap.css">
-    <link rel="stylesheet" href="./style/style.css">
-    <title>KVD_APP</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="login">
-            <div class="logoContainer">
-                <img class="logo" src="./images/logo.png" alt="Logo_Robot">
-            </div>
-
-            <div class="loginForm">
-                <form action="/katalog">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Heslo"
-                        required>
-
-                    <p class="regLink">
-                        <a href="/registrace">Chci se registrovat</a>
-                    </p>
-
-                    <p class="text-center">
-                        <button type="submit" class="btn btn-dark">Přihlásit</button>
-                    </p>
-                </form>
-            </div>
+                <p class="text-center">
+                    <button type="submit" class="btn btn-dark">Přihlásit</button>
+                </p>
+            </form>
         </div>
     </div>
+</div>
 
-    <div class="zcu_logo">
-        <img src="./images/zcu-logo.svg" alt="ZČU">
-    </div>
+<div class="zcu_logo">
+    <img src="./images/zcu-logo.svg" alt="ZČU">
+</div>
 
-    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="./js/popper.min.js"></script>
-    <script type="text/javascript" src="./js/bootstrap.js"></script>
-</body>
-
-</html>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>

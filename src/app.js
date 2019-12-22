@@ -1,6 +1,8 @@
 const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
+const userRouter = require("./routers/user")
+require("./db/mongoose")
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -9,27 +11,17 @@ const publicDirectoryPath = path.join(__dirname, "../public")
 const viewsPath = path.join(__dirname, "../templates/views")
 const partialsPath = path.join(__dirname, "../templates/partials")
 
+
 app.set("view engine", "hbs")
 app.set("views", viewsPath)
+app.set("view options", { layout: "../layouts/main" })
 hbs.registerPartials(partialsPath)
 
+app.use(express.json());
 app.use(express.static(publicDirectoryPath))
+app.use(userRouter)
 
-app.get("", (req, res) => {
-    try {
-        res.status(201).render("index")
-    } catch (e) {
-        res.status(404).send("Nějakej fail, kámo!")
-    }
-})
 
-app.get("/registrace", (req, res) => {
-    try {
-        res.status(201).render("registrace")
-    } catch (e) {
-        res.status(404).send("Nějakej fail, kámo!")
-    }
-})
 
 app.get("/katalog", (req, res) => {
     try {

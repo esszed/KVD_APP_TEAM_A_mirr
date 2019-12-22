@@ -1,87 +1,67 @@
-<!DOCTYPE html>
-<html lang="cs">
+<div class="container">
+    <div class="containerSettings text-center">
+        {{>header}}
+        <hr>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="fas fa-key" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Změna hesla
+                    </div>
+                </a>
+            </div>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="fas fa-user-ninja" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Přezdívka
+                    </div>
+                </a>
+            </div>
 
-    <link rel="stylesheet" href="./style/bootstrap.css">
-    <link rel="stylesheet" href="./style/style.css">
-    <title>KVD_APP</title>
-</head>
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="far fa-bell" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Notifikace
+                    </div>
+                </a>
+            </div>
 
-<body>
-    <div class="container">
-        <div class="containerSettings text-center">
-            {{>header}}
-            <hr>
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="far fa-smile" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Avatar
+                    </div>
+                </a>
+            </div>
 
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-2 tile">
-                    <a href="#">
-                        <div class="tileContent" style="color: black;">
-                            <i class="fas fa-key" style="font-size: 60px; margin-bottom: 10px;"></i><br>
-                            Změna hesla
-                        </div>
-                    </a>
-                </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="fas fa-database" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Databáze <br> (jen admin)
+                    </div>
+                </a>
+            </div>
 
-                <div class="col-sm-6 col-md-4 col-lg-2 tile">
-                    <a href="#">
-                        <div class="tileContent" style="color: black;">
-                            <i class="fas fa-user-ninja" style="font-size: 60px; margin-bottom: 10px;"></i><br>
-                            Přezdívka
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-2 tile">
-                    <a href="#">
-                        <div class="tileContent" style="color: black;">
-                            <i class="far fa-bell" style="font-size: 60px; margin-bottom: 10px;"></i><br>
-                            Notifikace
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-2 tile">
-                    <a href="#">
-                        <div class="tileContent" style="color: black;">
-                            <i class="far fa-smile" style="font-size: 60px; margin-bottom: 10px;"></i><br>
-                            Avatar
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-2 tile">
-                    <a href="#">
-                        <div class="tileContent" style="color: black;">
-                            <i class="fas fa-database" style="font-size: 60px; margin-bottom: 10px;"></i><br>
-                            Databáze <br> (jen admin)
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-2 tile">
-                    <a href="#">
-                        <div class="tileContent" style="color: black;">
-                            <i class="fas fa-calendar-week" style="font-size: 60px; margin-bottom: 10px;"></i><br>
-                            Celkový přehled (admin)
-                        </div>
-                    </a>
-                </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="fas fa-calendar-week" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Celkový přehled (admin)
+                    </div>
+                </a>
             </div>
         </div>
     </div>
+</div>
 
-    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="./js/popper.min.js"></script>
-    <script type="text/javascript" src="./js/bootstrap.js"></script>
-    <script src="./js/filtr.js"></script>
-</body>
-
-</html>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>
+<script src="./js/filtr.js"></script>

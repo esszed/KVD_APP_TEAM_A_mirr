@@ -1,4 +1,6 @@
 const express = require("express")
+const bCrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
 const User = require("../models/user")
 const router = new express.Router()
 
@@ -29,6 +31,27 @@ router.post("/registrace", async (req, res) => {
         console.log(user)
         res.status(400).send(e)
     }
+})
+
+router.post("/", async (req, res) => {
+    const user = await User.findOne({ email: req.body.email })
+    if (!user) {
+        return res.render("index", { message: "Uživatel nenalezen!" })
+    }
+    const validPass = await bCrypt.compare(req.body.password, user.password)
+    if (!validPass) {
+        return res.render("index", { message: "Uživatel nenalezen!" })
+    }
+
+    jwt.sign({ _id: user._id, email: user.email }, process.env.TOKEN_SECRET, {
+        expiresIn: "1h"
+    }, (err, token) => {
+        if (err) {
+            res.send("Token is not valid!")
+        } else {
+            res.render("catalog", { token })
+        }
+    })
 })
 
 

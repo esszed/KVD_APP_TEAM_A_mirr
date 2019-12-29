@@ -1,3 +1,9 @@
+{{#if token}}
+  <script type="text/javascript" async>
+    localStorage.setItem("token", "{{token}}")
+  </script>
+{{/if}}
+
 <div class="container">
     <div class="containerCatalog text-center">
         {{>header}}
@@ -119,4 +125,5 @@
 <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="./js/popper.min.js"></script>
 <script type="text/javascript" src="./js/bootstrap.js"></script>
+<script type="text/javascript" src="./js/fetch.js"></script>
 <script src="./js/filtr.js"></script>

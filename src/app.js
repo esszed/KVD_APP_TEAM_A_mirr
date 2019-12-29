@@ -2,7 +2,11 @@ const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
 const userRouter = require("./routers/user")
+const middleware = require("./middlewares/auth")
 require("./db/mongoose")
+require("dotenv").config()
+
+
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -16,6 +20,7 @@ app.set("view engine", "hbs")
 app.set("views", viewsPath)
 app.set("view options", { layout: "../layouts/main" })
 hbs.registerPartials(partialsPath)
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

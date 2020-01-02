@@ -1,6 +1,7 @@
 const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
+const cookieParser = require("cookie-parser")
 const userRouter = require("./routers/user")
 const middleware = require("./middlewares/auth")
 require("./db/mongoose")
@@ -23,13 +24,14 @@ hbs.registerPartials(partialsPath)
 
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(publicDirectoryPath))
+app.use(cookieParser())
 app.use(userRouter)
 
 
 
-app.get("/katalog", (req, res) => {
+app.get("/katalog", middleware, (req, res) => {
     try {
         res.status(201).render("catalog")
     } catch (e) {
@@ -37,7 +39,7 @@ app.get("/katalog", (req, res) => {
     }
 })
 
-app.get("/knihovna", (req, res) => {
+app.get("/knihovna", middleware, (req, res) => {
     try {
         res.status(201).render("MyLibrary")
     } catch (e) {
@@ -45,7 +47,7 @@ app.get("/knihovna", (req, res) => {
     }
 })
 
-app.get("/nastaveni", (req, res) => {
+app.get("/nastaveni", middleware, (req, res) => {
     try {
         res.status(201).render("settings")
     } catch (e) {

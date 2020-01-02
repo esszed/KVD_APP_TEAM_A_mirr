@@ -1,6 +1,5 @@
 const express = require("express")
 const bCrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
 const User = require("../models/user")
 const router = new express.Router()
 
@@ -43,15 +42,8 @@ router.post("/", async (req, res) => {
         return res.render("index", { message: "Uživatel nenalezen!" })
     }
 
-    jwt.sign({ _id: user._id, email: user.email }, process.env.TOKEN_SECRET, {
-        expiresIn: "1h"
-    }, (err, token) => {
-        if (err) {
-            res.send("Token is not valid!")
-        } else {
-            res.render("catalog", { token })
-        }
-    })
+    const token = await user.generateAuthToken()
+    res.cookie("auth-token", token).render("catalog")
 })
 
 

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/vomajda96/KVD_APP_TEAM_A#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",

@@ -3,8 +3,9 @@ const express = require("express")
 const hbs = require("hbs")
 const cookieParser = require("cookie-parser")
 const userRouter = require("./routers/user")
-const middleware = require("./middlewares/auth")
+const auth = require("./middlewares/auth")
 require("./db/mongoose")
+
 require("dotenv").config()
 
 
@@ -31,7 +32,7 @@ app.use(userRouter)
 
 
 
-app.get("/katalog", middleware, (req, res) => {
+app.get("/katalog", auth, (req, res) => {
     try {
         res.status(201).render("catalog")
     } catch (e) {
@@ -39,7 +40,7 @@ app.get("/katalog", middleware, (req, res) => {
     }
 })
 
-app.get("/knihovna", middleware, (req, res) => {
+app.get("/knihovna", auth, (req, res) => {
     try {
         res.status(201).render("MyLibrary")
     } catch (e) {
@@ -47,7 +48,7 @@ app.get("/knihovna", middleware, (req, res) => {
     }
 })
 
-app.get("/nastaveni", middleware, (req, res) => {
+app.get("/nastaveni", auth, (req, res) => {
     try {
         res.status(201).render("settings")
     } catch (e) {

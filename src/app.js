@@ -34,7 +34,7 @@ app.use(userRouter)
 
 app.get("/katalog", auth, (req, res) => {
     try {
-        res.status(201).render("catalog")
+        res.status(201).render("catalog", {name: req.user.name, surname: req.user.surname, admin:req.user.admin})
     } catch (e) {
         res.status(404).send("Nějakej fail, kámo!")
     }
@@ -42,7 +42,7 @@ app.get("/katalog", auth, (req, res) => {
 
 app.get("/knihovna", auth, (req, res) => {
     try {
-        res.status(201).render("MyLibrary")
+        res.status(201).render("MyLibrary", {name: req.user.name, surname: req.user.surname, admin:req.user.admin})
     } catch (e) {
         res.status(404).send("Nějakej fail, kámo!")
     }
@@ -50,7 +50,7 @@ app.get("/knihovna", auth, (req, res) => {
 
 app.get("/nastaveni", auth, (req, res) => {
     try {
-        res.status(201).render("settings")
+        res.status(201).render("settings", {name: req.user.name, surname: req.user.surname, admin:req.user.admin})
     } catch (e) {
         res.status(404).send("Nějakej fail, kámo!")
     }

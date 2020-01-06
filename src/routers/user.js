@@ -50,7 +50,7 @@ router.post("/", async (req, res) => {
     }
 
     const token = await user.generateAuthToken()
-    res.cookie("auth-token", token, { expire: 3600 + Date.now() }).render("catalog")
+    res.cookie("auth-token", token, { expire: 3600 + Date.now() }).redirect("/")
 })
 
 router.post("/logout", auth, async (req, res) => {

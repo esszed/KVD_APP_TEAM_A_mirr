@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crud</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        button {
+            display: inline-block;
+            padding: 0.2em 1.45em;
+            margin: 0.1em;
+            border: 0.15em solid #CCCCCC;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #000000;
+            background-color: #CCCCCC;
+            text-align: center;
+            position: relative;
+        }
+
+
+        button:hover {
+            border-color: #7a7a7a;
+        }
+
+        button:active {
+            background-color: #999999;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Provizorní crud rozhraní</h1>
+
+    <form action="/nastaveni">
+        <button type="submit">Zpět</button>
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Značka</th>
+            <th>Nazev</th>
+            <th>Typ</th>
+            <th>Stav</th>
+            <th>Kdo má půjčeno</th>
+            <th>Smazat</th>
+        </tr>
+
+        {{#each allItems}}
+        <tr>
+            <form action="/deleteitem" method="POST">
+                <td> {{this._id}} </td>
+                <td> {{this.brand}} </td>
+                <td> {{this.name }}</td>
+                <td> {{this.type }}</td>
+                <td> {{this.state}} </td>
+                <td>{{this.borrowedBy}}</td>
+                <!-- <td> <button class="delete-button" id='<%= item._id %>'>X</button> -->
+                <td> <button class="delete-button" type="submit" name="id" value='{{this._id}}'>X</button>
+                </td>
+            </form>
+        </tr>
+        {{/each}}
+    </table>
+
+
+    <form action="/additem" method="POST">
+        Značka <input type="text" name="brand">
+        Název <input type="text" name="name">
+        Počet <input type="number" name="number">
+        <select name="type" id="typ">
+            <option value="tablet">Tablet</option>
+            <option value="mobil">Mobil</option>
+            <option value="notebook">Notebook</option>
+            <option value="robot">Robot</option>
+            <option value="Fotoaparát">Fotoaparát</option>
+            <option value="prislusenstvi">Příslušenství</option>
+        </select>
+        <button type="submit">Přidat do databaze</button>
+    </form>
+
+
+</body>
+
+</html>

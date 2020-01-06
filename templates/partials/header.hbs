@@ -1,0 +1,40 @@
+<div class="containerCatalog text-center">
+    <nav class="navbar navbar-expand-lg navbar-light navbarKVD">
+        <ul class="navbar-nav">
+            <img src="./images/logo.png" height="50" alt="JS#App">
+        </ul>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapseKVD"
+            aria-controls="navbarcollapseKVD" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarcollapseKVD">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/katalog" title="Katalog">Katalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/knihovna" title="Zapůjčené">Zapůjčené</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nastaveni" title="Nastavení">Nastavení</a>
+                </li>
+                <li class="nav-item">
+                    <div id="idCard">
+                        <img src="./images/apa_head.png" alt="Obrázek profilu">
+                        <span id="name">{{name}} {{surname}}</span> <span id="titel">{{#if admin}}
+                            | Správce
+                            {{else}}
+
+                            {{/if}}</span></span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-dark ml-3 logout" title="Odhlásit"><i class="fas fa-sign-out-alt"></i>
+                        Odhlásit</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script type="text/javascript" src="./js/logout.js"></script>

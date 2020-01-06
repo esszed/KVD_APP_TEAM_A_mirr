@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="containerSettings text-center">
+        {{>header}}
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="fas fa-key" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Změna hesla
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="fas fa-user-ninja" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Přezdívka
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="far fa-bell" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Notifikace
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent" style="color: black;">
+                        <i class="far fa-smile" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Avatar
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="/crud">
+                    <div class="tileContent"
+                        style="color: black; {{#if admin}}display:block{{else}}display:none{{/if}}">
+                        <i class="fas fa-database" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Databáze <br> (jen admin)
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-2 tile">
+                <a href="#">
+                    <div class="tileContent"
+                        style="color: black; {{#if admin}}display:block{{else}}display:none{{/if}}">
+                        <i class="fas fa-calendar-week" style="font-size: 60px; margin-bottom: 10px;"></i><br>
+                        Celkový přehled (admin)
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>
+<script src="./js/filtr.js"></script>

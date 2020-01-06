@@ -1,0 +1,33 @@
+{
+  "name": "projekt_kamo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e js,hbs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vomajda96/KVD_APP_TEAM_A.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vomajda96/KVD_APP_TEAM_A/issues"
+  },
+  "homepage": "https://github.com/vomajda96/KVD_APP_TEAM_A#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "hbs": "^4.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.0",
+    "validator": "^12.1.0"
+  }
+}

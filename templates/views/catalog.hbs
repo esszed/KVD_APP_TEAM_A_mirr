@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="containerCatalog text-center">
+        {{>header}}
+        <hr>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 mt-1 filterForm">
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Název položky"
+                            required>
+                        <button type="submit" class="btn btn-dark">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a class="btn btn-light mt-1" id="filterBtn">
+                    <i class="fas fa-filter"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="filterBtnDiv">
+            <a class="btn btn-light mt-1" id="filterBtn-sm">
+                <i class="fas fa-filter"></i> Filtr
+            </a>
+        </div>
+
+        <div id="filter_row" class="filter_row">
+            <div id="inputs">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 text-center text-white">
+                        <input type="radio" id="a_z" name="filters">
+                        <label for="a_z">Seřadit A-Z</label>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4 text-center text-white">
+                        <input type="radio" id="dostupne" name="filters">
+                        <label for="dostupne">Podle dostupnosti</label>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4 text-center text-white">
+                        <input type="radio" id="kusy" name="filters">
+                        <label for="kusy">Podle dostupných kusů</label>
+                    </div>
+                </div>
+            </div>
+            <button id="submit" class="btn btn-dark submitFilterBtn">Použít</button>
+        </div>
+
+        <table class="table table-sm table-bordered table-responsive-md catalogTable">
+            <thead>
+                <tr>
+                    <th>Název</th>
+                    <th>Typ zařízení</th>
+                    <th>Dostupné</th>
+                    <th>Příslušenství</th>
+                    <th>Celkem kusů k dispozici</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each items}}
+                <td>{{this.brand}} {{this.name}}</td>
+                <td>{{this.type}}</td>
+                <td>Ano</td>
+                <td>Žádné</td>
+                <td>{{this.times}}</td>
+                <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
+                        class="btn btn-warning btn-sm borrow" href="#">Vypůjčit</button> <button
+                        class="btn btn-primary btn-sm" href="#">Rezervovat</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>
+<script src="./js/filtr.js"></script>
+<script src="./js/borrowButtonScript.js"></script>

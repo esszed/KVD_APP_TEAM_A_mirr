@@ -1,0 +1,66 @@
+.catalogTable {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.catalogTable thead {
+	color: #fff;
+	background: #444;
+	font-weight: unset;
+}
+
+.catalogTable tbody {
+	color: red;
+	background: #fff;
+	font-weight: unset;
+}
+
+.table-bordered {
+	border: 0;
+}
+
+.table-bordered>thead>tr>th {
+	border: 1px solid #000;
+}
+
+.table-bordered>tbody>tr>td {
+	border: 1px solid #000;
+}
+
+.catalogTable .tableButtons {
+	color: white;
+}
+
+.catalogTable .tableButtons a {
+	width: 82px;
+}
+
+.catalogTable .tableButtons .btn-warning {
+	color: #222;
+}
+
+.catalogTable .tableButtons .btn-warning:hover {
+	color: #222;
+}
+
+.filterBtn {
+	position: relative;
+	right: 0;
+}
+
+.containerCatalog .filter_row {
+	opacity: 0;
+	height: 0px;
+	border: solid 1px #fff;
+	border-radius: 20px;
+	padding: 0px;
+	margin-top: 10px;
+	background: rgba(75, 75, 75, 0.3);
+	transition: 0.5s ease-out;
+}
+
+.containerCatalog .submitFilterBtn {
+	margin-left: auto;
+	margin-right: auto;
+	pointer-events: none;
+}

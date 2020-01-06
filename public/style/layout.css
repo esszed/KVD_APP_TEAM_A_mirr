@@ -1,0 +1,60 @@
+html {
+	font-size: 13px;
+}
+
+body {
+	font-family: 'Roboto Mono', monospace;
+	font-style: normal;
+	font-weight: 400;
+	background: #666666;
+	padding: 40px;
+}
+
+.navbarKVD .nav-link {
+	color: #fff !important;
+}
+
+.navbarKVD .nav-link:hover {
+	color: red !important;
+}
+
+.navbarKVD .active {
+	color: red !important;
+}
+
+#idCard img {
+	border-radius: 50%;
+	max-height: 31px;
+}
+
+#idCard {
+	color: red;
+}
+
+.filterForm ::placeholder {
+	color: red;
+}
+
+.filterForm input {
+	color: red;
+	opacity: 1;
+}
+
+.filterBtnDiv {
+	display: none;
+}
+
+@media (max-width: 575px) {
+	#filterBtn {
+		display: none;
+	}
+
+	.filterBtnDiv {
+		display: block;
+	}
+
+	#filterBtn-sm {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

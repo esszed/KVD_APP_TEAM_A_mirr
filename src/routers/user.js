@@ -37,11 +37,8 @@ router.post('/registrace', async (req, res) => {
 
   try {
     await user.save()
-    res
-      .status(201)
-      .render('index', { message: 'Jste zaregistrován, přihlaste se!' })
+    res.status(201).render('index', { message: 'Jste zaregistrován, přihlaste se!' })
   } catch (e) {
-    console.log(user)
     res.status(400).send(e)
   }
 })

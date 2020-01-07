@@ -15,12 +15,18 @@ router.get('/', (req, res) => {
   }
 })
 
-router.get('/registrace', (req, res) => {
+router.get('/registrace', async (req, res) => {
+  const admin = await User.find({ admin: true })
   try {
     if (req.cookies['auth-token']) {
       return res.redirect('/katalog')
     }
-    res.status(201).render('registrace', { title: 'Registrace' })
+
+    if (admin.length == 0) {
+      return res.status(201).render('registrace', { title: 'Registrace', display: "block" })
+    }
+
+    res.status(201).render('registrace', { title: 'Registrace', display: "none" })
   } catch (e) {
     res.status(404).send('Nějakej fail, kámo!')
   }

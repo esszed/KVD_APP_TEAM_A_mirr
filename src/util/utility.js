@@ -24,7 +24,8 @@ const countArrayofObjects = arrayOfObjects => {
   return resultArray
 }
 
-const countArrayofObjects2 = arrayOfObjects => { //provizorní, ne moc efektivní
+const countArrayofObjects2 = arrayOfObjects => {
+  //provizorní, ne moc efektivní
   const resultArray = []
   arrayOfObjects.map(item => {
     if (
@@ -32,7 +33,8 @@ const countArrayofObjects2 = arrayOfObjects => { //provizorní, ne moc efektivn�
         if (
           object.brand === item.brand &&
           object.name === item.name &&
-          object.type === item.type
+          object.type === item.type &&
+          object.borrowedBy === item.borrowedBy
         ) {
           object.times++
           return true

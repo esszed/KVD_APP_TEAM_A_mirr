@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="cs">
+<style>
+    button:hover {
+        border-color: #7a7a7a;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crud</title>
-    <style>
-        button:hover {
-            border-color: #7a7a7a;
-        }
-
-        button:active {
-            background-color: #999999;
-        }
-    </style>
+    button:active {
+        background-color: #999999;
+    }
+</style>
 </head>
 
 <body>
@@ -40,36 +32,77 @@
         <button type="submit">Přidat do databaze</button>
     </form>
     <p>
-    <form action="/uplnezobrazeni"><button class="btn btn btn-light">Úplné zobrazení</button></form>
+        <form action="/uplnezobrazeni"><button class="btn btn btn-light">Úplné zobrazení</button></form>
 
-    <table class="table table-sm table-bordered table-responsive-md catalogTable">
-        <thead>
-            <tr>
-                <th>Název</th>
-                <th>Typ zařízení</th>
-                <th>Dostupné</th>
-                <th>Příslušenství</th>
-                <th>Celkem kusů k dispozici</th>
-                <th>Akce</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each items}}
-            <td>{{this.brand}} {{this.name}}</td>
-            <td>{{this.type}}</td>
-            <td>Ano</td>
-            <td>Žádné</td>
-            <td>{{this.times}}</td>
-            <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
-                    class="btn btn-danger btn-sm delete" href="#">Smazat</button> <button class="btn btn-primary btn-sm"
-                    href="#">Upravit</button></td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
+        <table class="table table-sm table-bordered table-responsive-md catalogTable">
+            <thead>
+                <tr>
+                    <th>Název</th>
+                    <th>Typ zařízení</th>
+                    <th>Dostupné</th>
+                    <th>Příslušenství</th>
+                    <th>Celkem kusů k dispozici</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each items}}
+                <td>{{this.brand}} {{this.name}}</td>
+                <td>{{this.type}}</td>
+                <td>Ano</td>
+                <td>Žádné</td>
+                <td>{{this.times}}</td>
+                <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
+                        class="btn btn-danger btn-sm delete" href="#">Smazat</button> <button
+                        class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"
+                        href="#">Upravit</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <div class="container">
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Upravit položku</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="brand">Značka</label>
+                                    <input type="text" class="form-control" id="brand" aria-describedby="emailHelp">
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">Typ zařízení</label>
+                                    <input type="text" class="form-control" id="type">
+                                </div>
+                                <div class="form-group">
+                                    <label for="select">Dostupnost</label>
+                                    <select class="form-control" id="select">
+                                        <option>Ano</option>
+                                        <option>Ne</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tools">Příslušenství</label>
+                                    <input type="text" class="form-control" id="tools">
+                                </div>
+                                <div class="form-group">
+                                    <label for="count">Počet kusů</label>
+                                    <input type="number" class="form-control" id="count">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Potvrdit změny</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="./js/deleteButtonScript.js"></script>
+        <script src="./js/deleteButtonScript.js"></script>
 
 </body>
-
-</html>

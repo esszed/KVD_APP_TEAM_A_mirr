@@ -33,6 +33,31 @@ const countArrayofObjects2 = arrayOfObjects => {
         if (
           object.brand === item.brand &&
           object.name === item.name &&
+          object.type === item.type
+        ) {
+          object.times++
+          return true
+        } else {
+          return false
+        }
+      })
+    ) {
+    } else {
+      item.times = 1
+      resultArray.push(item)
+    }
+  })
+  return resultArray
+}
+const countArrayofObjects3 = arrayOfObjects => {
+  //provizorní, ne moc efektivní
+  const resultArray = []
+  arrayOfObjects.map(item => {
+    if (
+      resultArray.find(object => {
+        if (
+          object.brand === item.brand &&
+          object.name === item.name &&
           object.type === item.type &&
           object.borrowedBy === item.borrowedBy
         ) {
@@ -53,5 +78,6 @@ const countArrayofObjects2 = arrayOfObjects => {
 
 module.exports = {
   countArrayofObjects: countArrayofObjects,
-  countArrayofObjects2: countArrayofObjects2
+  countArrayofObjects2: countArrayofObjects2,
+  countArrayofObjects3: countArrayofObjects3
 }

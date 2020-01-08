@@ -129,7 +129,7 @@ app.get('/celkovyprehled', auth, (req, res) => {
       Item.find({ state: 'Vypůjčené' })
         .lean()
         .exec((err, items) => {
-          let changedItems = utility.countArrayofObjects2(items)
+          let changedItems = utility.countArrayofObjects3(items)
           changedItems.forEach(item => {
             if (item.borrowedBy != '') {
               User.findOne({ _id: item.borrowedBy }, (err, user) => {
@@ -137,6 +137,7 @@ app.get('/celkovyprehled', auth, (req, res) => {
               })
             }
           })
+
           res.status(201).render('generalOverview', {
             items: changedItems
           })

@@ -68,7 +68,7 @@
                             <h4 class="modal-title">Upravit položku</h4>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form action="/crud?_method=PUT" method="POST">
                                 <div class="form-group">
                                     <label for="brand">Značka</label>
                                     <input type="text" class="form-control" id="brand" aria-describedby="emailHelp">
@@ -93,7 +93,7 @@
                                     <input type="number" class="form-control" id="count">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Potvrdit změny</button>
-                            </form>
+                            </form a>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>

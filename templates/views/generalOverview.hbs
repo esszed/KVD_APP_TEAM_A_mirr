@@ -1,33 +1,29 @@
 <div class="container">
-    <div class="containerCatalog text-center">
-        <hr>
-        <form action="/nastaveni"><button type="submit">Zpět</button></form>
+    {{>header}}
+    <hr>
 
-
-
-        <table class="table table-sm table-bordered table-responsive-md catalogTable">
-            <thead>
-                <tr>
-                    <th>Název</th>
-                    <th>Půjčeno od</th>
-                    <th>Půjčeno do</th>
-                    <th>Půjčeno kusů</th>
-                    <th>Vypůjčeno</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each items}}
-                <tr>
-                    <td>{{this.brand}} {{this.name}} </td>
-                    <td>{{this.borrowDate}}</td>
-                    <td>{{this.endDate}}</td>
-                    <td>{{this.times}}</td>
-                    <td>{{this.borrowedBy}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-sm table-bordered table-responsive-md catalogTable">
+        <thead>
+            <tr>
+                <th>Název</th>
+                <th>Půjčeno od</th>
+                <th>Půjčeno do</th>
+                <th>Půjčeno kusů</th>
+                <th>Vypůjčeno</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each items}}
+            <tr>
+                <td>{{this.brand}} {{this.name}} </td>
+                <td>{{this.borrowDate}}</td>
+                <td>{{this.endDate}}</td>
+                <td>{{this.times}}</td>
+                <td>{{this.borrowedBy}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 </div>
 
 <script src="./js/filtr.js"></script>

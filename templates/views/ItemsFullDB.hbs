@@ -51,37 +51,39 @@
 </head>
 
 <body>
-    <h1>Provizorní crud rozhraní</h1>
+    <div class="container">
+        <h1 style="color: white; font-weight: bold;">Zobrazení položek po jednotlivých kusech</h1>
 
-    <form action="/crud">
-        <button type="submit">Zpět</button>
-    </form>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Značka</th>
-            <th>Nazev</th>
-            <th>Typ</th>
-            <th>Stav</th>
-            <th>Kdo má půjčeno</th>
-            <th>Smazat</th>
-        </tr>
+        <form action="/crud">
+            <button style="margin: 10px;" class="btn btn-warning" type="submit">Zpět</button>
+        </form>
+        <table class="table table-sm table-responsive-md">
+            <tr>
+                <th>ID</th>
+                <th>Značka</th>
+                <th>Nazev</th>
+                <th>Typ</th>
+                <th>Stav</th>
+                <th>Kdo má půjčeno</th>
+                <th>Smazat</th>
+            </tr>
 
-        {{#each allItems}}
-        <tr>
-            <form action="/deleteitem" method="POST">
-                <td> {{this._id}} </td>
-                <td> {{this.brand}} </td>
-                <td> {{this.name }}</td>
-                <td> {{this.type }}</td>
-                <td> {{this.state}} </td>
-                <td>{{this.borrowedBy}}</td>
-                <td> <button class="delete-button" type="submit" name="id" value='{{this._id}}'>X</button>
-                </td>
-            </form>
-        </tr>
-        {{/each}}
-    </table>
+            {{#each allItems}}
+            <tr>
+                <form action="/deleteitem" method="POST">
+                    <td> {{this._id}} </td>
+                    <td> {{this.brand}} </td>
+                    <td> {{this.name }}</td>
+                    <td> {{this.type }}</td>
+                    <td> {{this.state}} </td>
+                    <td>{{this.borrowedBy}}</td>
+                    <td> <button class="delete-button" type="submit" name="id" value='{{this._id}}'>X</button>
+                    </td>
+                </form>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
 
 </body>
 

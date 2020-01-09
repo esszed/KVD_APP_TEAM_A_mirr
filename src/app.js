@@ -139,7 +139,10 @@ app.get('/celkovyprehled', auth, (req, res) => {
           })
 
           res.status(201).render('generalOverview', {
-            items: changedItems
+            items: changedItems,
+            name: req.user.name,
+            surname: req.user.surname,
+            admin: req.user.admin
           })
         })
     } else {

@@ -6,12 +6,19 @@ const auth = require('../middlewares/auth')
 const router = new express.Router()
 
 router.post('/additem', auth, (req, res) => {
+  let accessory
   for (let i = 0; i < req.body.number; i++) {
+    if (req.body.accessory == '') {
+      accessory = 'Žádné'
+    } else {
+      accessory = req.body.accessory
+    }
     const item = new Item({
       _id: new mongoose.Types.ObjectId(),
       brand: req.body.brand,
       name: req.body.name,
       type: req.body.type,
+      accessory: accessory,
       borrowedBy: '',
       state: 'K dispozici'
     })
@@ -78,6 +85,77 @@ router.post('/return/:name/:brand/', auth, (req, res) => {
       })
       req.user.save()
       res.redirect('/knihovna')
+    }
+  )
+})
+
+router.post('/change', auth, (req, res) => {
+  Item.find(
+    { name: req.body.originalName, brand: req.body.originalBrand },
+    (err, items) => {
+      items.forEach(item => {
+        if (req.body.newBrand !== '') {
+          item.brand = req.body.newBrand
+        }
+        if (req.body.newName !== '') {
+          item.name = req.body.newName
+        }
+        if (req.body.newType !== '') {
+          item.type = req.body.newType
+        }
+        if (req.body.newAccessory !== '') {
+          item.accessory = req.body.newAccessory
+        }
+        item.save()
+      })
+
+      if (req.body.newAmount > 0) {
+        if (req.body.newAmount < items.length) {
+          for (let i = 0; i < items.length - req.body.newAmount; i++) {
+            Item.deleteOne(
+              {
+                brand: req.body.originalBrand,
+                name: req.body.originalName
+              },
+              err => {
+                if (err) return handleError(err)
+              }
+            )
+          }
+        } else if (req.body.newAmount > items.length) {
+          for (let i = 0; i < req.body.newAmount - items.length; i++) {
+            const item = new Item({
+              _id: new mongoose.Types.ObjectId(),
+              borrowedBy: '',
+              state: 'K dispozici'
+            })
+
+            if (req.body.newBrand !== '') {
+              item.brand = req.body.newBrand
+            }
+            if (req.body.newName !== '') {
+              item.name = req.body.newName
+            }
+            if (req.body.newType !== '') {
+              item.type = req.body.newType
+            }
+
+            if (req.body.newAccessory !== '') {
+              item.accessory = req.body.newAccessory
+            }
+
+            if (req.body.newBrand == '') {
+              item.brand = req.body.originalBrand
+            }
+            if (req.body.newName == '') {
+              item.name = req.body.originalName
+            }
+
+            item.save()
+          }
+        }
+      }
+      res.redirect('/crud')
     }
   )
 })

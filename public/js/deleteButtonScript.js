@@ -19,3 +19,13 @@ borrowButtons.forEach(button => {
     }
   })
 })
+
+const changeButtons = document.querySelectorAll('.change')
+const hiddenInput = document.querySelector('.hiddenInput')
+const submitButton = document.querySelector('.sendChangeForm')
+changeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    hiddenInput.value = button.name
+    submitButton.value = button.value
+  })
+})

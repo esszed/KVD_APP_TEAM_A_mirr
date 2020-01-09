@@ -6,6 +6,7 @@ const itemSchema = Schema({
   name: String,
   type: String,
   state: String,
+  accessory: String,
   borrowedBy: String,
   borrowDate: String,
   endDate: String

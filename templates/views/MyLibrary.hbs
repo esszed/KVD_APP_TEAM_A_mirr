@@ -57,7 +57,7 @@
                     <th>Půjčeno od</th>
                     <th>Půjčeno do</th>
                     <th>Půjčeno kusů</th>
-                    <th>Akce</th>
+                    <th class="action">Akce</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,8 +66,10 @@
                     <td>{{this.brand}} {{this.name}} </td>
                     <td>{{this.borrowDate}}</td>
                     <td>{{this.endDate}}</td>
-                    <td>{{this.times}}</td>
-                    <td class="tableButtons"><button class="btn btn-success btn-sm return" name="{{this.name}}"
+                    <td>{{this.times}} <span class="absoluteButton"><button class="btn btn-success btn-sm return"
+                                name="{{this.name}}" value="{{this.brand}}"><i class="fas fa-reply"></i></button></span>
+                    </td>
+                    <td class="action tableButtons"><button class="btn btn-success btn-sm return" name="{{this.name}}"
                             value="{{this.brand}}">Vrátit</button></td>
                 </tr>
                 {{/each}}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="../assets/style/bootstrap.css">
+        <link rel="stylesheet" href="../assets/style/style.css">
+        <title>KVD_APP</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="containerCatalog text-center">
+                <nav class="navbar navbar-expand-lg navbar-light navbarKVD">
+                    <ul class="navbar-nav">
+                        <img src="../assets/images/logo.png" height="50" alt="JS#App">
+                    </ul>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapseKVD" aria-controls="navbarcollapseKVD" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarcollapseKVD">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="catalog.html" title="Katalog">Katalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="library.html" title="Zapůjčené">Zapůjčené</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="settings.html" title="Nastavení">Nastavení</a>
+                            </li>
+                            <li class="nav-item">
+                                <div id="idCard">
+                                    <img src="../assets/images/apa_head.png" alt="Obrázek profilu">
+                                    <span id="name">Petr Vomáčka</span> | <span id="titel">Správce</span>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-dark ml-3" href="../index.html" title="Odhlásit"><i class="fas fa-sign-out-alt"></i> Odhlásit</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 mt-1 filterForm">
+                        <form class="form-inline">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Název položky" required>
+                                <button type="submit" class="btn btn-dark">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a class="btn btn-light mt-1" id="filterBtn">
+                            <i class="fas fa-filter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="filterBtnDiv">
+                    <a class="btn btn-light mt-1" id="filterBtn-sm">
+                        <i class="fas fa-filter"></i> Filtr
+                    </a>
+                </div>
+
+                <div id="filter_row" class="filter_row">
+                    <div id="inputs">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 text-center text-white">
+                                <input type="radio" id="a_z" name="filters">
+                                <label for="a_z">Seřadit A-Z</label>
+                            </div>
+
+                            <div class="col-sm-12 col-md-4 text-center text-white">
+                                <input type="radio" id="dostupne" name="filters">
+                                <label for="dostupne">Podle dostupnosti</label>
+                            </div>
+
+                            <div class="col-sm-12 col-md-4 text-center text-white">
+                                <input type="radio" id="kusy" name="filters">
+                                <label for="kusy">Podle dostupných kusů</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="submit" class="btn btn-dark submitFilterBtn">Použít</button>
+                </div>
+
+                <table class="table table-sm table-bordered table-responsive-md catalogTable">
+                    <thead>
+                        <tr>
+                            <th>Název</th>
+                            <th>Typ zařízení</th>
+                            <th>Dostupné</th>
+                            <th>Příslušenství</th>
+                            <th>Celkem kusů k dispozici</th>
+                            <th class="action">Akce</th class>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ozobot</td>
+                            <td>Robot</td>
+                            <td>Ano</td>
+                            <td>Žádné</td>
+                            <td>15<span class="absoluteButton"><a class="btn btn-warning btn-sm" href="#"><i class="fas fa-cart-arrow-down"></i></a></span></td>
+                            <td class="action tableButtons"><a class="btn btn-warning btn-sm" href="#">Vypůjčit</a> </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ozobot</td>
+                            <td>Robot</td>
+                            <td>Ano</td>
+                            <td>Žádné</td>
+                            <td>15<span class="absoluteButton"><a class="btn btn-warning btn-sm" href="#"><i class="fas fa-cart-arrow-down"></i></a></span></td>
+                            <td class="action tableButtons"><a class="btn btn-warning btn-sm" href="#">Vypůjčit</a> </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ozobot</td>
+                            <td>Robot</td>
+                            <td>Ano</td>
+                            <td>Žádné</td>
+                            <td>15<span class="absoluteButton"><a class="btn btn-warning btn-sm" href="#"><i class="fas fa-cart-arrow-down"></i></a></span></td>
+                            <td class="action tableButtons"><a class="btn btn-warning btn-sm" href="#">Vypůjčit</a> </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ozobot</td>
+                            <td>Robot</td>
+                            <td>Ano</td>
+                            <td>Žádné</td>
+                            <td>15<span class="absoluteButton"><a class="btn btn-warning btn-sm" href="#"><i class="fas fa-cart-arrow-down"></i></a></span></td>
+                            <td class="action tableButtons"><a class="btn btn-warning btn-sm" href="#">Vypůjčit</a> </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ozobot</td>
+                            <td>Robot</td>
+                            <td>Ano</td>
+                            <td>Žádné</td>
+                            <td>15<span class="absoluteButton"><a class="btn btn-warning btn-sm" href="#"><i class="fas fa-cart-arrow-down"></i></a></span></td>
+                            <td class="action tableButtons"><a class="btn btn-warning btn-sm" href="#">Vypůjčit</a> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="../assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+        <script src="../assets/js/filtr.js"></script>
+    </body>
+
+    </html>

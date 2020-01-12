@@ -58,7 +58,7 @@
                     <th>Dostupné</th>
                     <th>Příslušenství</th>
                     <th>Celkem kusů k dispozici</th>
-                    <th>Akce</th>
+                    <th class="action">Akce</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,10 +67,11 @@
                 <td>{{this.type}}</td>
                 <td>Ano</td>
                 <td>{{this.accessory}}</td>
-                <td>{{this.times}}</td>
-                <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
-                        class="btn btn-warning btn-sm borrow" href="#">Vypůjčit</button> <button
-                        class="btn btn-primary btn-sm" href="#">Rezervovat</button></td>
+                <td>{{this.times}} <span class="absoluteButton"><button class="btn btn-warning btn-sm borrow"
+                            name="{{this.name}}" value="{{this.brand}}" href="#"><i
+                                class="fas fa-cart-arrow-down"></i></button></span></td>
+                <td class="action tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
+                        class="btn btn-warning btn-sm borrow" href="#">Vypůjčit</button></td>
                 </tr>
                 {{/each}}
             </tbody>

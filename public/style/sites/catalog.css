@@ -20,11 +20,12 @@
 	border: 0;
 }
 
-.table-bordered > thead > tr > th {		/*specifikuje elementy, které jsou přímým potomkem th, které je přímo pod tr*/
+.table-bordered>thead>tr>th {
+	/*specifikuje elementy, které jsou přímým potomkem th, které je přímo pod tr*/
 	border: 1px solid #000;
 }
 
-.table-bordered > tbody > tr > td {
+.table-bordered>tbody>tr>td {
 	border: 1px solid #000;
 }
 
@@ -34,7 +35,8 @@
 	}
 }
 
-.catalogTable .tableButtons {			/*pro všechny tableButtons, které jsou v catalogTable*/
+.catalogTable .tableButtons {
+	/*pro všechny tableButtons, které jsou v catalogTable*/
 	color: white;
 }
 
@@ -83,4 +85,8 @@
 .containerCatalog .submitFilterBtn {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.clickable {
+	pointer-events: none
 }

@@ -63,6 +63,7 @@ router.post('/deleteitem', auth, (req, res) => {
 
 router.post('/borrow/:name/:brand/:amount', auth, (req, res) => {
   try {
+    console.log(req.params.brand, req.params.name)
     Item.find(
       { brand: req.params.brand, name: req.params.name, state: 'K dispozici' },
       (err, items) => {

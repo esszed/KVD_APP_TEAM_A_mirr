@@ -66,20 +66,22 @@ router.post('/borrow/:name/:brand/:amount', auth, (req, res) => {
     Item.find(
       { brand: req.params.brand, name: req.params.name, state: 'K dispozici' },
       (err, items) => {
-        for (let i = 0; i < req.params.amount; i++) {
-          items[i].borrowedBy = req.user._id
-          items[i].state = 'Vypůjčené'
-          items[i].borrowDate = new Date().toLocaleDateString('cs-CZ')
-          items[i].endDate = new Date(Date.now() + 12096e5).toLocaleDateString(
-            'cs-CZ'
-          )
-          items[i].save()
-          req.user.borrowed.push(items[i]._id)
+        if (req.params.amount <= items.length) {
+          for (let i = 0; i < req.params.amount; i++) {
+            items[i].borrowedBy = req.user._id
+            items[i].state = 'Vypůjčené'
+            items[i].borrowDate = new Date().toLocaleDateString('cs-CZ')
+            items[i].endDate = new Date(
+              Date.now() + 12096e5
+            ).toLocaleDateString('cs-CZ')
+            items[i].save()
+            req.user.borrowed.push(items[i]._id)
+          }
+          req.user.save()
+          res.redirect('/knihovna')
         }
-        req.user.save()
       }
     )
-    res.redirect('/knihovna')
   } catch (e) {
     res.status(500).send()
   }
@@ -147,11 +149,13 @@ router.post('/change', auth, (req, res) => {
               )
             }
           } else if (req.body.newAmount > items.length) {
+            let accs = items[0].accessory
             for (let i = 0; i < req.body.newAmount - items.length; i++) {
               const item = new Item({
                 _id: new mongoose.Types.ObjectId(),
                 borrowedBy: '',
-                state: 'K dispozici'
+                state: 'K dispozici',
+                accessory: accs
               })
 
               if (req.body.newBrand !== '') {
@@ -163,18 +167,15 @@ router.post('/change', auth, (req, res) => {
               if (req.body.newType !== '') {
                 item.type = req.body.newType
               }
-
               if (req.body.newAccessory !== '') {
                 item.accessory = req.body.newAccessory
               }
-
               if (req.body.newBrand == '') {
                 item.brand = req.body.originalBrand
               }
               if (req.body.newName == '') {
                 item.name = req.body.originalName
               }
-
               item.save()
             }
           }

@@ -1,7 +1,7 @@
 const borrowButtons = document.querySelectorAll('.borrow')
 borrowButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const amount = prompt('Kolik zapůjčit')
+    const amount = prompt('Kolik kusů zapůjčit?')
     if (amount != null) {
       fetch(
         `/borrow/${event.srcElement.name}/${event.srcElement.value}/${amount}`,

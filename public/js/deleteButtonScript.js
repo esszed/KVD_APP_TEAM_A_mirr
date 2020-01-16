@@ -1,7 +1,7 @@
 const borrowButtons = document.querySelectorAll('.delete')
 borrowButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const amount = prompt('Kolik smazat')
+    const amount = prompt('Kolik kusů smazat?')
     if (amount != null) {
       fetch(
         `/deleteitems/${event.srcElement.name}/${event.srcElement.value}/${amount}`,

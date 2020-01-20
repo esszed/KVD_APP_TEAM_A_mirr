@@ -1,8 +1,16 @@
-const borrowButtons = document.querySelectorAll('.delete')
-borrowButtons.forEach(button => {
+const deleteButtons = document.querySelectorAll('.delete')
+
+deleteButtons.forEach(button => {
   button.addEventListener('click', () => {
     const amount = prompt('Kolik kusů smazat?')
     if (amount != null) {
+      if (event.srcElement.name === '') {
+        event.srcElement.name = 'none'
+      }
+      if (event.srcElement.value === '') {
+        event.srcElement.value = 'none'
+      }
+
       fetch(
         `/deleteitems/${event.srcElement.name}/${event.srcElement.value}/${amount}`,
         { method: 'POST' }
@@ -28,4 +36,16 @@ changeButtons.forEach(button => {
     hiddenInput.value = button.name
     submitButton.value = button.value
   })
+})
+
+const requiredInputs = document.querySelectorAll('.required')
+const addButton = document.querySelector('.addButton')
+console.log(requiredInputs[0].value)
+addButton.addEventListener('click', () => {
+  if (requiredInputs[0].value == '' && requiredInputs[1].value == '') {
+    // requiredInputs.forEach(input => {
+    //   input.required = true
+    // })
+    alert('Značka nebo název musí být vyplněné')
+  }
 })

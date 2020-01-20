@@ -6,25 +6,27 @@ const router = new express.Router()
 
 router.post('/additem', auth, (req, res) => {
   try {
-    let accessory
-    for (let i = 0; i < req.body.number; i++) {
-      if (req.body.accessory == '') {
-        accessory = 'Žádné'
-      } else {
-        accessory = req.body.accessory
+    if (req.body.name != '' || req.body.brand != '') {
+      let accessory
+      for (let i = 0; i < req.body.number; i++) {
+        if (req.body.accessory == '') {
+          accessory = 'Žádné'
+        } else {
+          accessory = req.body.accessory
+        }
+        const item = new Item({
+          _id: new mongoose.Types.ObjectId(),
+          brand: req.body.brand,
+          name: req.body.name,
+          type: req.body.type,
+          accessory: accessory,
+          borrowedBy: '',
+          state: 'K dispozici'
+        })
+        item.save()
       }
-      const item = new Item({
-        _id: new mongoose.Types.ObjectId(),
-        brand: req.body.brand,
-        name: req.body.name,
-        type: req.body.type,
-        accessory: accessory,
-        borrowedBy: '',
-        state: 'K dispozici'
-      })
-      item.save()
+      res.redirect('/crud')
     }
-    res.redirect('/crud')
   } catch (e) {
     res.status(500).send()
   }
@@ -32,6 +34,12 @@ router.post('/additem', auth, (req, res) => {
 
 router.post('/deleteitems/:name/:brand/:amount', auth, (req, res) => {
   try {
+    if (req.params.brand == 'none') {
+      req.params.brand = ''
+    }
+    if (req.params.name == 'none') {
+      req.params.name = ''
+    }
     for (let i = 0; i < req.params.amount; i++) {
       Item.deleteOne(
         {

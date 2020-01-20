@@ -17,13 +17,13 @@
         <form style="margin-bottom: 10px;" action="/additem" method="POST">
             <div class="form-row">
                 <div class="col">
-                    <input type="text" name="brand" class="form-control" placeholder="Značka">
+                    <input type="text" name="brand" class="form-control required" placeholder="Značka">
                 </div>
                 <div class="col">
-                    <input type="text" name="name" class="form-control" placeholder="Název">
+                    <input type="text" name="name" class="form-control required" placeholder="Název">
                 </div>
                 <div class="col">
-                    <input type="number" name="number" class="form-control" placeholder="Počet">
+                    <input type="number" name="number" class="form-control" required placeholder="Počet">
                 </div>
                 <div class="col">
                     <input type="text" name="accessory" class="form-control" placeholder="Příslušenství">
@@ -36,7 +36,7 @@
                     <option value="Fotoaparát">Fotoaparát</option>
                     <option value="Příslušenství">Příslušenství</option>
                 </select>
-                <button style="margin-left: 5px;" class="btn btn-primary" type="submit">Přidat</button>
+                <button style="margin-left: 5px;" class="btn btn-primary addButton" type="submit">Přidat</button>
             </div>
         </form>
 

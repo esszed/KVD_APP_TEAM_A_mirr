@@ -27,108 +27,119 @@
                 </div>
                 <div class="col">
                     <input type="text" name="accessory" class="form-control" placeholder="Příslušenství">
+
                 </div>
-                <select class="col form-control" name="type" id="typ">
+                <div class="col">
+                    <input type="text" class="form-control" name="type" id="typ" placeholder="Typ zařízení">
+                </div>
+                {{!-- <select class="col form-control" name="type" id="typ">
                     <option value="Tablet">Tablet</option>
                     <option value="Mobil">Mobil</option>
                     <option value="Notebook">Notebook</option>
                     <option value="Robot">Robot</option>
                     <option value="Fotoaparát">Fotoaparát</option>
                     <option value="Příslušenství">Příslušenství</option>
-                </select>
+                </select> --}}
+
                 <button style="margin-left: 5px;" class="btn btn-primary addButton" type="submit">Přidat</button>
             </div>
         </form>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 mt-1 filterForm">
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="text" class="form-control searchItemAndType" id="title" name="title"
+                            placeholder="Název položky">
+                    </div>
+                </form>
+            </div>
+            <form action="/uplnezobrazeni"><button class="btn btn btn-warning">Zobrazit všechna data</button></form>
 
-        <form action="/uplnezobrazeni"><button class="btn btn btn-warning">Zobrazit všechna data</button></form>
+            <table class="table table-sm table-bordered table-responsive-md catalogTable">
+                <thead>
+                    <tr>
+                        <th>Název</th>
+                        <th>Typ zařízení</th>
+                        <th>Dostupné</th>
+                        <th>Příslušenství</th>
+                        <th>Celkem kusů k dispozici</th>
+                        <th>Akce</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each items}}
+                    <td>{{this.brand}} {{this.name}}</td>
+                    <td>{{this.type}}</td>
+                    <td>Ano</td>
+                    <td>{{this.accessory}}</td>
+                    <td>{{this.times}}</td>
+                    <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
+                            class="btn btn-danger btn-sm delete" href="#">Smazat</button> <button name="{{this.name}}"
+                            value="{{this.brand}}" class="btn btn-primary btn-sm change" data-toggle="modal"
+                            data-target="#myModal" href="#">Upravit</button></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <div class="container">
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Upravit položku</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/change" method="POST">
+                                    <div class="form-group">
+                                        <label for="brand">Značka</label>
+                                        <input type="text" name="newBrand" class="form-control" id="brand"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Název/model</label>
+                                        <input type="text" name="newName" class="form-control" id="name"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Typ zařízení</label>
 
-        <table class="table table-sm table-bordered table-responsive-md catalogTable">
-            <thead>
-                <tr>
-                    <th>Název</th>
-                    <th>Typ zařízení</th>
-                    <th>Dostupné</th>
-                    <th>Příslušenství</th>
-                    <th>Celkem kusů k dispozici</th>
-                    <th>Akce</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each items}}
-                <td>{{this.brand}} {{this.name}}</td>
-                <td>{{this.type}}</td>
-                <td>Ano</td>
-                <td>{{this.accessory}}</td>
-                <td>{{this.times}}</td>
-                <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
-                        class="btn btn-danger btn-sm delete" href="#">Smazat</button> <button name="{{this.name}}"
-                        value="{{this.brand}}" class="btn btn-primary btn-sm change" data-toggle="modal"
-                        data-target="#myModal" href="#">Upravit</button></td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-        <div class="container">
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog modal-md">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Upravit položku</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form action="/change" method="POST">
-                                <div class="form-group">
-                                    <label for="brand">Značka</label>
-                                    <input type="text" name="newBrand" class="form-control" id="brand"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Název/model</label>
-                                    <input type="text" name="newName" class="form-control" id="name"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="form-group">
-                                    <label for="type">Typ zařízení</label>
+                                        {{!-- <select name="newType" class="form-control" id="select">
+                                            <option value="Tablet">Tablet</option>
+                                            <option value="Mobil">Mobil</option>
+                                            <option value="Notebook">Notebook</option>
+                                            <option value="Robot">Robot</option>
+                                            <option value="Fotoaparát">Fotoaparát</option>
+                                            <option value="Příslušenství">Příslušenství</option>
+                                        </select> --}}
+                                        <input type="text" name="newType" class="form-control" id="tools">
+                                    </div>
+                                    <div class="form-group">
 
-                                    <select name="newType" class="form-control" id="select">
-                                        <option value="Tablet">Tablet</option>
-                                        <option value="Mobil">Mobil</option>
-                                        <option value="Notebook">Notebook</option>
-                                        <option value="Robot">Robot</option>
-                                        <option value="Fotoaparát">Fotoaparát</option>
-                                        <option value="Příslušenství">Příslušenství</option>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tools">Příslušenství</label>
+                                        <input type="text" name="newAccessory" class="form-control" id="tools">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="count">Počet kusů</label>
+                                        <input type="number" name="newAmount" class="form-control" id="count">
+                                    </div>
+                                    <input class="hiddenInput" type="hidden" name="originalName">
+                                    <button type="submit" name="originalBrand"
+                                        class="btn btn-primary sendChangeForm">Potvrdit
+                                        změny</button>
 
-                                    </select>
-
-
-                                </div>
-                                <div class="form-group">
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="tools">Příslušenství</label>
-                                    <input type="text" name="newAccessory" class="form-control" id="tools">
-                                </div>
-                                <div class="form-group">
-                                    <label for="count">Počet kusů</label>
-                                    <input type="number" name="newAmount" class="form-control" id="count">
-                                </div>
-                                <input class="hiddenInput" type="hidden" name="originalName">
-                                <button type="submit" name="originalBrand"
-                                    class="btn btn-primary sendChangeForm">Potvrdit
-                                    změny</button>
-
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="./js/deleteButtonScript.js"></script>
-
+        <script src="./js/deleteButtonScript.js"></script>
+        <script src="./js/search.js"></script>
 </body>

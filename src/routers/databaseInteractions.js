@@ -71,6 +71,12 @@ router.post('/deleteitem', auth, (req, res) => {
 
 router.post('/borrow/:name/:brand/:amount', auth, (req, res) => {
   try {
+    if (req.params.brand == 'none') {
+      req.params.brand = ''
+    }
+    if (req.params.name == 'none') {
+      req.params.name = ''
+    }
     Item.find(
       { brand: req.params.brand, name: req.params.name, state: 'K dispozici' },
       (err, items) => {
@@ -97,6 +103,12 @@ router.post('/borrow/:name/:brand/:amount', auth, (req, res) => {
 
 router.post('/return/:name/:brand/', auth, (req, res) => {
   try {
+    if (req.params.brand == 'none') {
+      req.params.brand = ''
+    }
+    if (req.params.name == 'none') {
+      req.params.name = ''
+    }
     Item.find(
       {
         brand: req.params.brand,

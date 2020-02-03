@@ -68,4 +68,41 @@ router.post('/logout', auth, async (req, res) => {
   }
 })
 
+router.post('/nastaveni', auth, async (req, res) => {
+  const currPass = req.user.password
+  const bodyPass = req.body.oldPass
+  const newPass = req.body.newPass
+
+  const hashPass = bCrypt.hashSync(newPass, 8);
+  try {
+    const isMatch = bCrypt.compareSync(bodyPass, currPass)
+    if (!isMatch) {
+      return res.render("settings", {
+        isGreen: false,
+        message: 'Zadali jste špatné heslo, zkuste to prosím znovu.',
+        name: req.user.name,
+        surname: req.user.surname,
+        admin: req.user.admin
+      })
+    }
+    else {
+      User.updateOne({ password: currPass }, { $set: { password: hashPass } }, (err) => {
+        if (err) {
+          return console.log(err)
+        } else {
+          res.render("settings", {
+            isGreen: true,
+            message: 'Heslo bylo změněno.',
+            name: req.user.name,
+            surname: req.user.surname,
+            admin: req.user.admin
+          })
+        }
+      })
+    }
+  } catch (e) {
+    res.status(404).send(e)
+  }
+})
+
 module.exports = router

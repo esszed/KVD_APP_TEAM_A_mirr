@@ -77,6 +77,7 @@ app.get('/nastaveni', auth, (req, res) => {
   }
 })
 
+
 app.get('/crud', auth, (req, res) => {
   try {
     if (req.user.admin) {

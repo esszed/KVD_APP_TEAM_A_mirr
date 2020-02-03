@@ -1,4 +1,4 @@
-const borrowButtons = document.querySelectorAll('.borrow')
+/* const borrowButtons = document.querySelectorAll('.borrow')
 borrowButtons.forEach(button => {
   button.addEventListener('click', () => {
     const amount = prompt('Kolik kusů zapůjčit?')
@@ -25,3 +25,4 @@ borrowButtons.forEach(button => {
     }
   })
 })
+ */

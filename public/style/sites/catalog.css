@@ -20,12 +20,11 @@
 	border: 0;
 }
 
-.table-bordered>thead>tr>th {
-	/*specifikuje elementy, které jsou přímým potomkem th, které je přímo pod tr*/
+.table-bordered > thead > tr > th {		/*specifikuje elementy, které jsou přímým potomkem th, které je přímo pod tr*/
 	border: 1px solid #000;
 }
 
-.table-bordered>tbody>tr>td {
+.table-bordered > tbody > tr > td {
 	border: 1px solid #000;
 }
 
@@ -35,8 +34,7 @@
 	}
 }
 
-.catalogTable .tableButtons {
-	/*pro všechny tableButtons, které jsou v catalogTable*/
+.catalogTable .tableButtons .btn-warning{			/*pro všechny tableButtons, které jsou v catalogTable*/
 	color: white;
 }
 
@@ -87,6 +85,10 @@
 	margin-right: auto;
 }
 
-.clickable {
-	pointer-events: none
+#borrowCount[type=number]::-webkit-inner-spin-button, 
+#borrowCount[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	margin: 0; 
 }

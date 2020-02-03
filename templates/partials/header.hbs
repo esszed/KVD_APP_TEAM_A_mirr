@@ -17,17 +17,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/knihovna" title="Zapůjčené">Zapůjčené</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/nastaveni" title="Nastavení">Nastavení</a>
+                <li class="nav-item" style="{{#if admin}}display:block{{else}}display:none{{/if}}">
+                    <a class="nav-link" href="/crud" title="Databáze">Databáze</a>
+                </li>
+                <li class="nav-item" style="{{#if admin}}display:block{{else}}display:none{{/if}}">
+                    <a class="nav-link" href="/celkovyprehled" title="Celkový přehled">Celkový přehled</a>
                 </li>
                 <li class="nav-item">
                     <div id="idCard">
-                        <img src="./images/apa_head.png" alt="Obrázek profilu">
-                        <span class="text-warning" id="name">{{name}} {{surname}}</span> <span class="text-success" id="titel">{{#if admin}}
-                            | Správce
-                            {{else}}
+                        <a class="nav-link" href="/nastaveni">
+                            <img src="./images/apa_head.png" alt="Obrázek profilu">
+                            <span class="text-warning" id="name">{{name}} {{surname}}</span> <span class="text-success"
+                                id="titel">{{#if admin}}
+                                | Správce
+                                {{else}}
 
-                            {{/if}}</span></span>
+                                {{/if}}</span></span>
+                        </a>
                     </div>
                 </li>
                 <li class="nav-item">

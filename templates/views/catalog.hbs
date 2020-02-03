@@ -9,45 +9,9 @@
                     <div class="input-group">
                         <input type="text" class="form-control searchItemAndType" id="title" name="title"
                             placeholder="Název položky">
-
-
-                        </button>
                     </div>
                 </form>
             </div>
-            <div class="col-sm-6 text-right">
-                <a class="btn btn-light mt-1" id="filterBtn">
-                    <i class="fas fa-filter"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="filterBtnDiv">
-            <a class="btn btn-light mt-1" id="filterBtn-sm">
-                <i class="fas fa-filter"></i> Filtr
-            </a>
-        </div>
-
-        <div id="filter_row" class="filter_row">
-            <div id="inputs">
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 text-center text-white">
-                        <input type="radio" id="a_z" name="filters">
-                        <label for="a_z">Seřadit A-Z</label>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 text-center text-white">
-                        <input type="radio" id="dostupne" name="filters">
-                        <label for="dostupne">Podle dostupnosti</label>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 text-center text-white">
-                        <input type="radio" id="kusy" name="filters">
-                        <label for="kusy">Podle dostupných kusů</label>
-                    </div>
-                </div>
-            </div>
-            <button id="submit" class="btn btn-dark submitFilterBtn">Použít</button>
         </div>
 
         <table class="table table-sm table-bordered table-responsive-md catalogTable">
@@ -71,14 +35,62 @@
                             name="{{this.name}}" value="{{this.brand}}" href="#"><i
                                 class="fas fa-cart-arrow-down clickable"></i></button></span></td>
                 <td class="action tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
-                        class="btn btn-warning btn-sm borrow" href="#">Vypůjčit</button></td>
+                        class="btn btn-warning btn-sm borrow" data-toggle="modal" data-target="#borrowModal"
+                        onclick="openModal({{this.times}});" href="#">Vypůjčit</button></td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
+
+        <!-- Modal 'Vypůjčit' -->
+        <div class="modal fade" id="borrowModal" tabindex="-1" role="dialog" aria-labelledby="borrowModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="borrowModalLabel">Vypůjčit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <input type="text" id="borrowMaxCount" value="" hidden>
+                            <input type="number" class="form-control" id="borrowCount" name="count" value=""
+                                placeholder="Zadejte počet kusů" onkeyup="validate();" required>
+                            <div class="text-danger" id="warningText"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="sendButton" type="submit" class="btn btn-dark">Vypůjčit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 'Přesměrování' -->
+        <div class="modal fade" id="crossroadModal" tabindex="-1" role="dialog" aria-labelledby="crossroadModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="crossroadModalLabel">Co teď chcete udělat?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form>
+                        <div class="modal-footer">
+                            <a type="submit" class="btn btn-warning">Pokračovat ve výběru</a>
+                            <a type="submit" class="btn btn-warning">Přesměrovat do sekce "Zapůjčené"</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<script src="./js/filtr.js"></script>
+<script src="./js/borrowValidation.js"></script>
 <script src="./js/borrowButtonScript.js"></script>
 <script src="./js/search.js"></script>

@@ -76,6 +76,7 @@ app.get('/nastaveni', auth, (req, res) => {
     res.status(404).send('Nějakej fail, kámo!')
   }
 })
+
 app.get('/crud', auth, (req, res) => {
   try {
     if (req.user.admin) {

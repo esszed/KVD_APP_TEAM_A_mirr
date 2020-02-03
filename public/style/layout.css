@@ -11,24 +11,30 @@ body {
 }
 
 .navbarKVD .nav-link {
-	color: #fff !important;
+	color: #fff!important;
 }
 
 .navbarKVD .nav-link:hover {
-	color: red !important;
+	color: red!important;
 }
 
 .navbarKVD .active {
-	color: red !important;
+	color: red!important;
 }
 
 #idCard img {
 	border-radius: 50%;
-	max-height: 31px;
+	max-height: 22px;
 }
 
 #idCard {
 	color: red;
+	transition: 0.5s ease-out;
+	border-radius: 20px;
+}
+
+#idCard:hover {
+	background-color: white;
 }
 
 .filterForm ::placeholder {
@@ -48,11 +54,9 @@ body {
 	#filterBtn {
 		display: none;
 	}
-
 	.filterBtnDiv {
 		display: block;
 	}
-
 	#filterBtn-sm {
 		margin-left: auto;
 		margin-right: auto;

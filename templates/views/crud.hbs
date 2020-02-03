@@ -43,9 +43,12 @@
 
                 <button style="margin-left: 5px;" class="btn btn-primary addButton" type="submit">Přidat</button>
             </div>
+            <div style="margin-top:10px;">
+                <form action="/uplnezobrazeni"><button class="btn btn btn-warning">Zobrazit všechna data</button></form>
+            </div>
         </form>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 mt-1 filterForm">
+            <div class="col-xs-12 col-md-12 mt-1 ">
                 <form class="form-inline">
                     <div class="input-group">
                         <input type="text" class="form-control searchItemAndType" id="title" name="title"
@@ -53,7 +56,6 @@
                     </div>
                 </form>
             </div>
-            <form action="/uplnezobrazeni"><button class="btn btn btn-warning">Zobrazit všechna data</button></form>
 
             <table class="table table-sm table-bordered table-responsive-md catalogTable">
                 <thead>

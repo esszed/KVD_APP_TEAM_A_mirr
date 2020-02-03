@@ -7,43 +7,11 @@
             <div class="col-xs-12 col-sm-6 mt-1 filterForm">
                 <form class="form-inline">
                     <div class="input-group">
-                        <input type="text" class="form-control searchItem" id="title" name="title" placeholder="Název položky">
+                        <input type="text" class="form-control searchItem" id="title" name="title"
+                            placeholder="Název položky">
                     </div>
                 </form>
             </div>
-            <div class="col-sm-6 text-right">
-                <a class="btn btn-light mt-1" id="filterBtn">
-                    <i class="fas fa-filter"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="filterBtnDiv">
-            <a class="btn btn-light mt-1" id="filterBtn-sm">
-                <i class="fas fa-filter"></i> Filtr
-            </a>
-        </div>
-
-        <div id="filter_row" class="filter_row">
-            <div id="inputs">
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 text-center text-white">
-                        <input type="radio" id="a_z" name="filters">
-                        <label for="a_z">Seřadit A-Z</label>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 text-center text-white">
-                        <input type="radio" id="dostupne" name="filters">
-                        <label for="dostupne">Podle dostupnosti</label>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 text-center text-white">
-                        <input type="radio" id="kusy" name="filters">
-                        <label for="kusy">Podle dostupných kusů</label>
-                    </div>
-                </div>
-            </div>
-            <button id="submit" class="btn btn-dark submitFilterBtn">Použít</button>
         </div>
 
         <table class="table table-sm table-bordered table-responsive-md catalogTable">
@@ -75,6 +43,5 @@
     </div>
 </div>
 
-<script src="./js/filtr.js"></script>
 <script src="./js/returnButtonScript.js"></script>
 <script src="./js/search.js"></script>

@@ -7,8 +7,9 @@
             <div class="col-xs-12 col-sm-6 mt-1 filterForm">
                 <form class="form-inline">
                     <div class="input-group">
+                        <i class="fa fa-search icon"></i>
                         <input type="text" class="form-control searchItemAndType" id="title" name="title"
-                            placeholder="Název položky">
+                            placeholder="Název/typ položky">
                     </div>
                 </form>
             </div>
@@ -32,8 +33,9 @@
                 <td>Ano</td>
                 <td>{{this.accessory}}</td>
                 <td>{{this.times}} <span class="absoluteButton"><button class="btn btn-warning btn-sm borrow"
-                            name="{{this.name}}" value="{{this.brand}}" href="#"><i
-                                class="fas fa-cart-arrow-down clickable"></i></button></span></td>
+                            name="{{this.name}}" value="{{this.brand}}" href="#" data-toggle="modal"
+                            data-target="#borrowModal"><i class="fas fa-cart-arrow-down clickable"></i></button></span>
+                </td>
                 <td class="action tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
                         class="btn btn-warning btn-sm borrow" data-toggle="modal" data-target="#borrowModal"
                         onclick="openModal({{this.times}});" href="#">Vypůjčit</button></td>
@@ -53,13 +55,15 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form>
+                    <form method="POST" action="/borrow">
                         <div class="modal-body">
                             <input type="text" id="borrowMaxCount" value="" hidden>
-                            <input type="number" class="form-control" id="borrowCount" name="count" value=""
+                            <input type="number" class="form-control" id="borrowCount" name="amount" value=""
                                 placeholder="Zadejte počet kusů" onkeyup="validate();" required>
                             <div class="text-danger" id="warningText"></div>
                         </div>
+                        <input class="hiddenInputBrand" type="hidden" name="brand">
+                        <input class="hiddenInputName" type="hidden" name="name">
                         <div class="modal-footer">
                             <button id="sendButton" type="submit" class="btn btn-dark">Vypůjčit</button>
                         </div>
@@ -68,29 +72,43 @@
             </div>
         </div>
 
+
+
         <!-- Modal 'Přesměrování' -->
         <div class="modal fade" id="crossroadModal" tabindex="-1" role="dialog" aria-labelledby="crossroadModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="crossroadModalLabel">Co teď chcete udělat?</h5>
+                        <h5 class="modal-title" id="crossroadModalLabel">Úspěšně vypůjčeno</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <form>
                         <div class="modal-footer">
-                            <a type="submit" class="btn btn-warning">Pokračovat ve výběru</a>
-                            <a type="submit" class="btn btn-warning">Přesměrovat do sekce "Zapůjčené"</a>
+                            <a data-dismiss="modal" class="btn btn-warning">Pokračovat ve výběru</a>
+                            <a href="/knihovna" class="btn btn-warning">Přesměrovat do sekce "Zapůjčené"</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
+
+
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
 <script src="./js/borrowValidation.js"></script>
 <script src="./js/borrowButtonScript.js"></script>
 <script src="./js/search.js"></script>
+{{#if isTrue}}
+<script>
+    $(document).ready(() => {
+        $('#crossroadModal').modal('show')
+    })
+
+</script>
+{{/if}}

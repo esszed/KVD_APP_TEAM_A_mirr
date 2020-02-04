@@ -1,30 +1,45 @@
 const deleteButtons = document.querySelectorAll('.delete')
 
+// deleteButtons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     const amount = prompt('Kolik kusů smazat?')
+//     if (amount != null) {
+//       if (event.srcElement.name === '') {
+//         event.srcElement.name = 'none'
+//       }
+//       if (event.srcElement.value === '') {
+//         event.srcElement.value = 'none'
+//       }
+
+//       fetch(
+//         `/deleteitems/${event.srcElement.name}/${event.srcElement.value}/${amount}`,
+//         { method: 'POST' }
+//       )
+//         .then(response => {
+//           if (response.ok) {
+//             window.location.href = '/crud'
+//           }
+//           throw new Error('Request failed.')
+//         })
+//         .catch(error => {
+//           console.log(error)
+//         })
+//     }
+//   })
+// })
+
+const hiddenInputBrand = document.querySelector('.hiddenInputBrand')
+const hiddenInputName = document.querySelector('.hiddenInputName')
 deleteButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const amount = prompt('Kolik kusů smazat?')
-    if (amount != null) {
-      if (event.srcElement.name === '') {
-        event.srcElement.name = 'none'
-      }
-      if (event.srcElement.value === '') {
-        event.srcElement.value = 'none'
-      }
-
-      fetch(
-        `/deleteitems/${event.srcElement.name}/${event.srcElement.value}/${amount}`,
-        { method: 'POST' }
-      )
-        .then(response => {
-          if (response.ok) {
-            window.location.href = '/crud'
-          }
-          throw new Error('Request failed.')
-        })
-        .catch(error => {
-          console.log(error)
-        })
+    if (button.name === '') {
+      button.name === 'none'
     }
+    if (button.value === '') {
+      button.value = 'none'
+    }
+    hiddenInputName.value = button.name
+    hiddenInputBrand.value = button.value
   })
 })
 

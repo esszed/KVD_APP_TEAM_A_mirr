@@ -32,19 +32,19 @@ router.post('/additem', auth, (req, res) => {
   }
 })
 
-router.post('/deleteitems/:name/:brand/:amount', auth, (req, res) => {
+router.post('/deleteitems', auth, (req, res) => {
   try {
-    if (req.params.brand == 'none') {
-      req.params.brand = ''
+    if (req.body.brand == 'none') {
+      req.body.brand = ''
     }
-    if (req.params.name == 'none') {
-      req.params.name = ''
+    if (req.body.name == 'none') {
+      req.body.name = ''
     }
-    for (let i = 0; i < req.params.amount; i++) {
+    for (let i = 0; i < req.body.amount; i++) {
       Item.deleteOne(
         {
-          brand: req.params.brand,
-          name: req.params.name,
+          brand: req.body.brand,
+          name: req.body.name,
           state: 'K dispozici'
         },
         err => {
@@ -69,19 +69,19 @@ router.post('/deleteitem', auth, (req, res) => {
   }
 })
 
-router.post('/borrow/:name/:brand/:amount', auth, (req, res) => {
+router.post('/borrow', auth, (req, res) => {
   try {
-    if (req.params.brand == 'none') {
-      req.params.brand = ''
+    if (req.body.brand == 'none') {
+      req.body.brand = ''
     }
-    if (req.params.name == 'none') {
-      req.params.name = ''
+    if (req.body.name == 'none') {
+      req.body.name = ''
     }
     Item.find(
-      { brand: req.params.brand, name: req.params.name, state: 'K dispozici' },
+      { brand: req.body.brand, name: req.body.name, state: 'K dispozici' },
       (err, items) => {
-        if (req.params.amount <= items.length) {
-          for (let i = 0; i < req.params.amount; i++) {
+        if (req.body.amount <= items.length) {
+          for (let i = 0; i < req.body.amount; i++) {
             items[i].borrowedBy = req.user._id
             items[i].state = 'Vypůjčené'
             items[i].borrowDate = new Date().toLocaleDateString('cs-CZ')
@@ -92,7 +92,8 @@ router.post('/borrow/:name/:brand/:amount', auth, (req, res) => {
             req.user.borrowed.push(items[i]._id)
           }
           req.user.save()
-          res.redirect('/knihovna')
+          req.app.set('isTrue', true)
+          return res.redirect('/katalog')
         }
       }
     )

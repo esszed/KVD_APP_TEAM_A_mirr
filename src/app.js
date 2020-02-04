@@ -34,13 +34,16 @@ app.get('/katalog', auth, (req, res) => {
     Item.find({ state: 'K dispozici' })
       .lean()
       .exec((err, items) => {
+        let isTrue = req.app.get('isTrue')
         let changedItems = utility.countArrayofObjects(items)
         res.status(201).render('catalog', {
           items: changedItems,
           name: req.user.name,
           surname: req.user.surname,
-          admin: req.user.admin
+          admin: req.user.admin,
+          isTrue: isTrue
         })
+        req.app.set('isTrue', false)
       })
   } catch (e) {
     res.status(404).send('Nějakej fail, kámo!')
@@ -76,7 +79,6 @@ app.get('/nastaveni', auth, (req, res) => {
     res.status(404).send('Nějakej fail, kámo!')
   }
 })
-
 
 app.get('/crud', auth, (req, res) => {
   try {
@@ -137,7 +139,6 @@ app.get('/celkovyprehled', auth, (req, res) => {
               })
             }
           })
-
           res.status(201).render('generalOverview', {
             items: changedItems,
             name: req.user.name,

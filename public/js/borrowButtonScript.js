@@ -1,3 +1,19 @@
+const borrowButtons = document.querySelectorAll('.borrow')
+const hiddenInputBrand = document.querySelector('.hiddenInputBrand')
+const hiddenInputName = document.querySelector('.hiddenInputName')
+borrowButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.name === '') {
+      button.name === 'none'
+    }
+    if (button.value === '') {
+      button.value = 'none'
+    }
+    hiddenInputName.value = button.name
+    hiddenInputBrand.value = button.value
+  })
+})
+
 /* const borrowButtons = document.querySelectorAll('.borrow')
 borrowButtons.forEach(button => {
   button.addEventListener('click', () => {

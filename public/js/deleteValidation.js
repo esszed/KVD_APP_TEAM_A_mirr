@@ -1,11 +1,11 @@
 function openModal(maxCount) {
-    document.getElementById('borrowMaxCount').setAttribute('value', maxCount);
-    document.getElementById('borrowModal').hidden = false;
+    document.getElementById('deleteMaxCount').setAttribute('value', maxCount);
+    document.getElementById('deleteModal').hidden = false;
 }
 
 function validate() {
-    let count = parseInt(document.getElementById('borrowCount').value);
-    let maxCount = parseInt(document.getElementById('borrowMaxCount').value);
+    let count = parseInt(document.getElementById('deleteCount').value);
+    let maxCount = parseInt(document.getElementById('deleteMaxCount').value);
     let warningText = document.getElementById('warningText');
     let sendButton = document.getElementById('sendButton');
 

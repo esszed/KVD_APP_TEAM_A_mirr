@@ -43,16 +43,17 @@
 
                 <button style="margin-left: 5px;" class="btn btn-primary addButton" type="submit">Přidat</button>
             </div>
-            <div style="margin-top:10px;">
-                <form action="/uplnezobrazeni"><button class="btn btn btn-warning">Zobrazit všechna data</button></form>
-            </div>
         </form>
+        <div style="margin-top:10px;">
+            <form action="/uplnezobrazeni"><button class="btn btn btn-warning">Zobrazit všechna data</button></form>
+        </div>
         <div class="row">
             <div class="col-xs-12 col-md-12 mt-1 ">
                 <form class="form-inline">
                     <div class="input-group">
-                        <input type="text" class="form-control searchItemAndType" id="title" name="title"
-                            placeholder="Název položky">
+                        <i class="fa fa-search icon"></i>
+                        <input type="text" class="form-control searchItemAndType search" id="title" name="title"
+                            placeholder="Název/typ položky">
                     </div>
                 </form>
             </div>
@@ -76,7 +77,8 @@
                     <td>{{this.accessory}}</td>
                     <td>{{this.times}}</td>
                     <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
-                            class="btn btn-danger btn-sm delete" href="#">Smazat</button> <button name="{{this.name}}"
+                            class="btn btn-danger btn-sm delete" onclick="openModal({{this.times}})" data-toggle="modal"
+                            data-target="#deleteModal" href="#">Smazat</button> <button name="{{this.name}}"
                             value="{{this.brand}}" class="btn btn-primary btn-sm change" data-toggle="modal"
                             data-target="#myModal" href="#">Upravit</button></td>
                     </tr>
@@ -140,8 +142,36 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="delete">Kolik kusů smazat?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form method="POST" action="/deleteitems">
+                            <div class="modal-body">
+                                <input type="text" id="deleteMaxCount" value="" hidden>
+                                <input type="number" class="form-control" id="deleteCount" name="amount" value=""
+                                    placeholder="Zadejte počet kusů" onkeyup="validate();" required>
+                                <div class="text-danger" id="warningText"></div>
+                            </div>
+                            <input class="hiddenInputBrand" type="hidden" name="brand">
+                            <input class="hiddenInputName" type="hidden" name="name">
+                            <div class="modal-footer">
+                                <button id="sendButton" type="submit" class="btn btn-dark">Smazat</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="./js/deleteButtonScript.js"></script>
+        <script src="./js/deleteValidation.js"></script>
         <script src="./js/search.js"></script>
 </body>

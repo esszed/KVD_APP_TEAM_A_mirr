@@ -23,10 +23,14 @@ router.get('/registrace', async (req, res) => {
     }
 
     if (admin.length == 0) {
-      return res.status(201).render('registrace', { title: 'Registrace', display: "block" })
+      return res
+        .status(201)
+        .render('registrace', { title: 'Registrace', display: 'block' })
     }
 
-    res.status(201).render('registrace', { title: 'Registrace', display: "none" })
+    res
+      .status(201)
+      .render('registrace', { title: 'Registrace', display: 'none' })
   } catch (e) {
     res.status(404).send('Nějakej fail, kámo!')
   }
@@ -37,7 +41,9 @@ router.post('/registrace', async (req, res) => {
 
   try {
     await user.save()
-    res.status(201).render('index', { message: 'Jste zaregistrován, přihlaste se!' })
+    res
+      .status(201)
+      .render('index', { message: 'Jste zaregistrován, přihlaste se!' })
   } catch (e) {
     res.status(400).send(e)
   }
@@ -73,32 +79,35 @@ router.post('/nastaveni', auth, async (req, res) => {
   const bodyPass = req.body.oldPass
   const newPass = req.body.newPass
 
-  const hashPass = bCrypt.hashSync(newPass, 8);
+  const hashPass = bCrypt.hashSync(newPass, 8)
   try {
     const isMatch = bCrypt.compareSync(bodyPass, currPass)
     if (!isMatch) {
-      return res.render("settings", {
+      return res.render('settings', {
         isGreen: false,
         message: 'Zadali jste špatné heslo, zkuste to prosím znovu.',
         name: req.user.name,
         surname: req.user.surname,
         admin: req.user.admin
       })
-    }
-    else {
-      User.updateOne({ password: currPass }, { $set: { password: hashPass } }, (err) => {
-        if (err) {
-          return console.log(err)
-        } else {
-          res.render("settings", {
-            isGreen: true,
-            message: 'Heslo bylo změněno.',
-            name: req.user.name,
-            surname: req.user.surname,
-            admin: req.user.admin
-          })
+    } else {
+      User.updateOne(
+        { password: currPass },
+        { $set: { password: hashPass } },
+        err => {
+          if (err) {
+            return console.log(err)
+          } else {
+            res.render('settings', {
+              isGreen: true,
+              message: 'Heslo bylo změněno.',
+              name: req.user.name,
+              surname: req.user.surname,
+              admin: req.user.admin
+            })
+          }
         }
-      })
+      )
     }
   } catch (e) {
     res.status(404).send(e)

@@ -137,6 +137,7 @@ router.post('/return/:name/:brand/', auth, (req, res) => {
 
 router.post('/change', auth, (req, res) => {
   try {
+    console.log(req.body.originalName, req.body.originalBrand)
     Item.find(
       { name: req.body.originalName, brand: req.body.originalBrand },
       (err, items) => {
@@ -196,6 +197,9 @@ router.post('/change', auth, (req, res) => {
               }
               if (req.body.newName == '') {
                 item.name = req.body.originalName
+              }
+              if (req.body.newType == '') {
+                item.type = req.body.originalType
               }
               item.save()
             }

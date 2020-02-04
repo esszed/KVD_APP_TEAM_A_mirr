@@ -45,11 +45,17 @@ deleteButtons.forEach(button => {
 
 const changeButtons = document.querySelectorAll('.change')
 const hiddenInput = document.querySelector('.hiddenInput')
+const hiddenInputTypeOriginal = document.querySelectorAll(
+  '.hiddenInputTypeOriginal'
+)
 const submitButton = document.querySelector('.sendChangeForm')
-changeButtons.forEach(button => {
+const hiddenInputType = document.querySelector('.hiddenInputType')
+changeButtons.forEach((button, index) => {
   button.addEventListener('click', () => {
+    console.log(hiddenInputTypeOriginal[index].value)
     hiddenInput.value = button.name
     submitButton.value = button.value
+    hiddenInputType.value = hiddenInputTypeOriginal[index].value
   })
 })
 
@@ -61,6 +67,6 @@ addButton.addEventListener('click', () => {
     // requiredInputs.forEach(input => {
     //   input.required = true
     // })
-    alert('Značka nebo název musí být vyplněné')
+    $('#warningModal').modal('show')
   }
 })

@@ -30,7 +30,7 @@
 
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" name="type" id="typ" placeholder="Typ zařízení">
+                    <input type="text" class="form-control" name="type" id="typ" placeholder="Typ zařízení" required>
                 </div>
                 {{!-- <select class="col form-control" name="type" id="typ">
                     <option value="Tablet">Tablet</option>
@@ -76,7 +76,8 @@
                     <td>Ano</td>
                     <td>{{this.accessory}}</td>
                     <td>{{this.times}}</td>
-                    <td class="tableButtons"><button name="{{this.name}}" value="{{this.brand}}"
+                    <td class="tableButtons"><input type="hidden" class="hiddenInputTypeOriginal"
+                            value="{{this.type}}"><button name="{{this.name}}" value="{{this.brand}}"
                             class="btn btn-danger btn-sm delete" onclick="openModal({{this.times}})" data-toggle="modal"
                             data-target="#deleteModal" href="#">Smazat</button> <button name="{{this.name}}"
                             value="{{this.brand}}" class="btn btn-primary btn-sm change" data-toggle="modal"
@@ -129,9 +130,11 @@
                                         <input type="number" name="newAmount" class="form-control" id="count">
                                     </div>
                                     <input class="hiddenInput" type="hidden" name="originalName">
+                                    <input class="hiddenInputType" type="hidden" name="originalType">
                                     <button type="submit" name="originalBrand"
                                         class="btn btn-primary sendChangeForm">Potvrdit
                                         změny</button>
+
 
                                 </form>
                             </div>
@@ -170,7 +173,23 @@
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="warningModal">Jméno nebo Značka musí být vyplněné</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Zavřít</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
         <script src="./js/deleteButtonScript.js"></script>
         <script src="./js/deleteValidation.js"></script>
         <script src="./js/search.js"></script>

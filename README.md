@@ -1,6 +1,8 @@
 # KVD_APP_TEAM_A_mirr
 Inventory app build as a collaboratve project for web technologies university class
 
+Live demo: https://kvd-zcu.herokuapp.com (Not optimised for heroku-> there are few bugs)
+
 Build with Express, mongoose, handlebars, bootstrap and more 
 
 ![Screenshot_20200915_010636](https://user-images.githubusercontent.com/56234798/93146763-fb2f0200-f6ef-11ea-9053-d8591932b7a6.png)
